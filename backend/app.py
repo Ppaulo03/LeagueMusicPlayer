@@ -51,6 +51,10 @@ def create_app() -> FastAPI:
 # Create application instance"
 app = create_app()
 
+from loguru import logger
+import sys
 
+logger.remove()
+logger.add(sys.stderr, level="INFO")
 if __name__ == "__main__":
     run_server(app)

@@ -84,6 +84,7 @@ Future<bool> testPing(int port) async {
 Future<ConfigModel?> getConfigs() async {
   if (port == 0) return null;
   try {
+    debugPrint('Buscando configs na porta $port');
     final uri = Uri.parse('http://127.0.0.1:$port/configs');
     final res = await http.get(uri).timeout(const Duration(seconds: 3));
     if (res.statusCode >= 200 && res.statusCode < 300) {

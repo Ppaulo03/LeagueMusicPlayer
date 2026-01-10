@@ -102,8 +102,21 @@ class DataDragonClient:
             search_key = "name" if by_name else "key"
             for champ_id, champ_data in champions["data"].items():
                 if champ_data[search_key] == champion_key:
+
+                    detail_url = f"{self.base_url}/cdn/{version}/data/{self.locale}/champion/{champ_id}.json"
+                    detail_resp = requests.get(detail_url, timeout=10)
+                    detail_resp.raise_for_status()
+                    detailed_data = detail_resp.json()
+
+                    skins_list = detailed_data["data"][champ_id]["skins"]
+                    valid_skin_nums = [skin["num"] for skin in skins_list]
+                    actual_skin_num = max(
+                        [num for num in valid_skin_nums if num <= skin_number],
+                        default=0,
+                    )
+
                     champ_data["splash"] = self.get_champion_splash(
-                        champ_data["id"], skin_number
+                        champ_data["id"], actual_skin_num
                     )
                     champ_data["palette"] = self.generate_color_palette(
                         champ_data["splash"]

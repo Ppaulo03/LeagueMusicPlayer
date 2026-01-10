@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:league_music_player/main.dart';
 import 'package:league_music_player/services/backend_service.dart';
+import 'package:league_music_player/core/constants/app_constants.dart';
 
-// Variável global (conforme seu contexto anterior)
-int port = 0;
 // Variável global para o processo (se precisar fechar depois)
 Process? backendProcess;
 
@@ -40,9 +39,10 @@ class _AppBootstrapState extends State<AppBootstrap> {
         backendProcess = await startBackend();
       }
       final portResult = await getBackendPort();
-
+      debugPrint("Porta obtida do backend: $portResult");
       if (portResult != null) {
         port = portResult; // Atualiza a global
+        debugPrint("Backend rodando na porta: $port");
       }
 
       return portResult; // Retorna null se falhou após as 100 tentativas

@@ -18,9 +18,9 @@ INACTIVITY_CHECK_INTERVAL = 5  # seconds
 # Background workers
 DOWNLOAD_WORKER_COUNT = 3
 
-# Game monitoring
-GAME_MONITOR_POLL_INTERVAL = 2.0  # seconds between game state checks
-GAME_MONITOR_RETRY_INTERVAL = 0.5  # seconds between retries when no game active
+# Game monitoring'
+GAME_MONITOR_POLL_INTERVAL = 300  # seconds between game state checks
+GAME_MONITOR_RETRY_INTERVAL = 20  # seconds between retries when no game active
 
 # API metadata
 API_TITLE = "League Music Player API"

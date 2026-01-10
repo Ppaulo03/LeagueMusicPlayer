@@ -39,6 +39,7 @@ class HomeViewModel extends ChangeNotifier {
 
   Future<void> _checkApiKey() async {
     try {
+      debugPrint("Checking API key in config...");
       final config = await _settingsApi.getConfig();
       _isApiKeyMissing = config?.apiKey == null || config!.apiKey!.isEmpty;
       debugPrint('API Key missing: $_isApiKeyMissing');

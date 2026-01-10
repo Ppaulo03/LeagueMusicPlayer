@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 from loguru import logger
 from config.settings import BASE_DIR
+import random
 
 # --- Modelos de Dados ---
 
@@ -104,16 +105,15 @@ def gerar_musicas_por_tema(campeao: str, tema: TemaMusical, qtd: int) -> List[st
 # --- Fluxo Principal ---
 
 
-def gerar_playlist(campeao: str, total_alvo: int = 50):
+def gerar_playlist(campeao: str, total_alvo: int = 100):
     try:
         playlist_final = []
 
         # 1. Pega 5 temas (Ex: Yasuo -> Hip Hop, Flauta Japonesa, Epic Rock, etc)
         temas = gerar_temas(campeao)
-
-        # Calcula quantas músicas por tema (ex: 50 / 5 = 10 músicas por tema)
+        print(total_alvo, len(temas))
         musicas_por_tema = total_alvo // len(temas)
-
+        print(musicas_por_tema)
         # 2. Loop para preencher
         for tema in temas:
             queries = gerar_musicas_por_tema(campeao, tema, musicas_por_tema)
@@ -123,4 +123,8 @@ def gerar_playlist(campeao: str, total_alvo: int = 50):
     except Exception as e:
         logger.error(f"Erro ao gerar playlist para {campeao}: {e}")
         playlist_final = []
+
+    random.shuffle(playlist_final)
+    for query in playlist_final:
+        logger.info(f"{query}")
     return playlist_final

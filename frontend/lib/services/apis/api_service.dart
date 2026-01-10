@@ -10,6 +10,7 @@ class ApiService {
 
   @protected
   Uri? buildUri(String endpoint) {
+    debugPrint('Building URI for endpoint: $endpoint with port $port');
     if (port == 0) return null; // backend not ready
     final normalized = endpoint.startsWith('/')
         ? endpoint.substring(1)
@@ -23,6 +24,7 @@ class ApiService {
     Duration? timeout,
   }) async {
     final uri = buildUri(endpoint);
+    debugPrint('GET request to: $uri');
     if (uri == null) return null;
     try {
       final response = await http

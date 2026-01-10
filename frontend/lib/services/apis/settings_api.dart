@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:league_music_player/services/apis/api_service.dart';
 import 'dart:convert';
 import 'package:league_music_player/core/models/champion_config.dart';
@@ -78,6 +79,7 @@ class SettingsApi extends ApiService {
   }
 
   Future<ConfigModel?> getConfig() async {
+    debugPrint('Fetching config from backend...');
     final response = await get('configs');
     if (!isOk(response)) return null;
 

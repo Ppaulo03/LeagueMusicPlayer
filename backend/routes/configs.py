@@ -30,6 +30,7 @@ class ConfigModel(BaseModel):
 
 def load_config() -> Dict[str, Any]:
     """Load configuration from file."""
+    logger.info(f"Loading configuration...{CONFIG_PATH}")
     try:
         with open(CONFIG_PATH, "r") as f:
             return json.load(f)
@@ -39,6 +40,7 @@ def load_config() -> Dict[str, Any]:
             json.dump(default_config, f)
         return default_config
     except json.JSONDecodeError:
+        logger.error("Invalid config file format.")
         raise HTTPException(status_code=500, detail="Invalid config file")
 
 
@@ -119,9 +121,7 @@ async def get_configs() -> JSONResponse:
         # Mask API key for security
         response = {
             "model": config.get("model", ""),
-            "api_key": (
-                "*" * len(config.get("api_key", "")) if config.get("api_key") else ""
-            ),
+            "api_key": config.get("api_key", ""),
         }
         return JSONResponse(content=response)
     except Exception as e:
