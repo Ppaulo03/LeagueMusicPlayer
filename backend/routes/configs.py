@@ -14,12 +14,13 @@ from loguru import logger
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from groq import AuthenticationError, RateLimitError
+from config.settings import BASE_DIR
 
 # Initialize router
 router = APIRouter(prefix="/configs", tags=["Configs"])
 
 # Path to config file
-CONFIG_PATH = Path(__file__).parent.parent / "config" / "config.json"
+CONFIG_PATH = BASE_DIR / "config.json"
 
 
 class ConfigModel(BaseModel):

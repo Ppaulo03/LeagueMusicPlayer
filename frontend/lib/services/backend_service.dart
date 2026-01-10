@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:league_music_player/core/logging.dart';
 import 'package:path/path.dart' as p;
 import 'package:http/http.dart' as http;
 import 'package:league_music_player/core/constants/app_constants.dart';
@@ -10,13 +11,14 @@ final tempDir = Directory.systemTemp.path;
 final portFile = File('$tempDir/backend_port.json');
 
 Future<Process?> startBackend() async {
+  addLog("Iniciando backend...");
   try {
     if (await portFile.exists()) {
       await portFile.delete();
     }
 
     String exeDir = p.join(p.dirname(Platform.resolvedExecutable), 'backend');
-    final exePath = p.join(exeDir, 'app.exe');
+    final exePath = p.join(exeDir, 'LeagueMusicPlayerBackend.exe');
 
     debugPrint('Iniciando backend em: $exePath');
     final process = await Process.start(
@@ -27,10 +29,12 @@ Future<Process?> startBackend() async {
     );
     process.stdout.transform(SystemEncoding().decoder).listen((data) {
       debugPrint('[Backend OUT] $data');
+      addLog("STDOUT: ${data.trim()}");
     });
 
     process.stderr.transform(SystemEncoding().decoder).listen((data) {
       debugPrint('[Backend ERR] $data');
+      addLog("STDERR: ${data.trim()}");
     });
 
     return process;

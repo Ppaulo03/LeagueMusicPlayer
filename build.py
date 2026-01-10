@@ -8,7 +8,7 @@ BASE_DIR = Path(".")
 BACKEND_DIR = Path("backend")
 FLUTTER_DIR = Path("frontend")
 
-PYTHON_DIST_DIR = BACKEND_DIR / "dist" / "app"
+PYTHON_DIST_DIR = BACKEND_DIR / "dist" / "LeagueMusicPlayerBackend"
 FLUTTER_BUILD_DIR = FLUTTER_DIR / "build" / "windows" / "x64" / "runner" / "Release"
 DEST_BACKEND_FOLDER = FLUTTER_BUILD_DIR / "backend"
 FINAL_OUTPUT_DIR = BASE_DIR / "release_final"

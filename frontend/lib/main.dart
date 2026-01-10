@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:league_music_player/bootsrap.dart';
+import 'package:league_music_player/core/logging.dart';
 import 'package:provider/provider.dart';
 import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
 import 'package:league_music_player/features/home/view/home_screen.dart';
@@ -8,8 +9,9 @@ import 'package:league_music_player/features/settings/viewmodel/config_viewmodel
 
 Process? backendProcess;
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await setupLogFile();
   runApp(const AppBootstrap());
 }
 

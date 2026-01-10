@@ -20,10 +20,6 @@ DDRAGON_BASE_URL = "https://ddragon.leagueoflegends.com"
 DEFAULT_LOCALE = "pt_BR"
 DEFAULT_SKIN_NUMBER = 0
 
-# Load champion region mappings
-BASE_DIR = Path(__file__).parent.parent
-CHAMPION_REGIONS_PATH = BASE_DIR / "data" / "champions.json"
-
 
 class DataDragonClient:
     """

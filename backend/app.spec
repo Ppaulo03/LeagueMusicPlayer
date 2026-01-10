@@ -1,6 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 a = Analysis(
     ['app.py'],
     pathex=[],
@@ -21,7 +20,8 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='app',
+    # AQUI: Define o nome do arquivo .exe e o nome do processo no sistema
+    name='LeagueMusicPlayerBackend', 
     debug=True,
     bootloader_ignore_signals=False,
     strip=False,
@@ -33,6 +33,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
 )
+
 coll = COLLECT(
     exe,
     a.binaries,
@@ -40,5 +41,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='app',
+    name='LeagueMusicPlayerBackend', 
 )

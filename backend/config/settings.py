@@ -4,6 +4,10 @@ Centralizes all configuration values for easy maintenance.
 """
 
 # Server configuration
+from pathlib import Path
+import sys
+
+
 DEFAULT_HOST = "127.0.0.1"
 PORT_FILE_NAME = "backend_port.json"
 
@@ -27,3 +31,15 @@ API_VERSION = "1.0.0"
 LOG_LEVEL = "info"
 ACCESS_LOG_ENABLED = True
 TRACK_COUNT = 50
+
+
+BASE_DIR = ""
+if getattr(sys, "frozen", False):
+    base_path = Path(sys.executable).parent
+    internal_path = base_path / "_internal"
+    if internal_path.exists():
+        BASE_DIR = internal_path
+    else:
+        BASE_DIR = base_path
+else:
+    BASE_DIR = Path(__file__).parent.parent

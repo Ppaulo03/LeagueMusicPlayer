@@ -10,27 +10,10 @@ import tempfile
 from pathlib import Path
 import json
 from loguru import logger
-import sys
 from music.queue import PlaybackQueue
-
-
-def get_base_path():
-    """
-    Retorna o caminho base correto, dependendo se está rodando
-    como script (.py) ou executável compilado (.exe).
-    """
-    if getattr(sys, "frozen", False):
-        base_path = Path(sys.executable).parent
-        internal_path = base_path / "_internal"
-        if internal_path.exists():
-            return internal_path
-        return base_path
-    else:
-        return Path(__file__).parent.parent
-
+from config.settings import BASE_DIR
 
 # Constants
-BASE_DIR = get_base_path()
 FFMPEG_PATH = BASE_DIR / "ffmpeg" / "bin" / "ffmpeg.exe"
 YT_DLP_PATH = BASE_DIR / "yt-dlp.exe"
 CACHE_PREFIX = "playlist_"
@@ -127,7 +110,7 @@ class MusicDownloader:
 
             # Configure yt-dlp
             command_args = [
-                f"{Path(__file__).parent.parent}/yt-dlp.exe",
+                f"{str(BASE_DIR)}/yt-dlp.exe",
                 "-f",
                 "bestaudio/best",
                 "--no-playlist",

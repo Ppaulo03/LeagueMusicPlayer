@@ -78,7 +78,7 @@ env/
 
 backend/build/
 backend/dist/
-backend/config/config.json
+backend/config.json
 
 release_final/
 

@@ -36,13 +36,9 @@ class _AppBootstrapState extends State<AppBootstrap> {
       final context = SecurityContext.defaultContext;
       context.setTrustedCertificatesBytes(sslData.buffer.asUint8List());
 
-      // 2. Inicia Backend (se necessário)
       if (kReleaseMode) {
-        // Supondo que startBackend() existe no seu código
-        // backendProcess = await startBackend();
+        backendProcess = await startBackend();
       }
-
-      // 3. Tenta pegar a porta (usa a sua função que já tem o retry interno)
       final portResult = await getBackendPort();
 
       if (portResult != null) {

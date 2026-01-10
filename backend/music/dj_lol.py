@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 from loguru import logger
-
+from config.settings import BASE_DIR
 
 # --- Modelos de Dados ---
 
@@ -37,7 +37,7 @@ class ListaMusicas(BaseModel):
 
 # --- Configuração ---
 def get_llm():
-    config_path = Path(__file__).parent.parent / "config" / "config.json"
+    config_path = BASE_DIR / "config.json"
     with open(config_path, "r") as f:
         config = json.load(f)
     if config.get("api_key"):
