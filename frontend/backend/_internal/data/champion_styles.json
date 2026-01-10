@@ -1,0 +1,1541 @@
+{
+    "Aatrox": {
+        "estilos": "Epic Metal / Industrial Metal",
+        "musica": {
+            "name": "The Only Thing They Fear Is You",
+            "artist": "Mick Gordon",
+            "mbid": "e45c3cdb-1a93-436a-8c9b-87f9c3252560"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+    },
+    "Ahri": {
+        "estilos": "K-Pop / Traditional Korean",
+        "musica": {
+            "name": "TAIL",
+            "artist": "SUNMI",
+            "mbid": "12439735-cf99-4af0-bd4d-4a5ec12ab19d"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg"
+    },
+    "Akali": {
+        "estilos": "Hip-Hop / K-Pop / J-Pop",
+        "musica": {
+            "name": "MIC Drop",
+            "artist": "BTS",
+            "mbid": "0ed28635-603f-4ced-97ba-0a43a9d78238"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg"
+    },
+    "Akshan": {
+        "estilos": "Adventurous Orchestral / Movie Score",
+        "musica": {
+            "name": "He's a Pirate",
+            "artist": "Klaus Badelt",
+            "mbid": "200963ab-bf01-36f7-8afe-b1115e425c0a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg"
+    },
+    "Alistar": {
+        "estilos": "Epic Orchestral / Cinematic",
+        "musica": {
+            "name": "God of War",
+            "artist": "Bear McCreary",
+            "mbid": "2bf41178-0c18-45b8-bc52-a1ae9b81dc44"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg"
+    },
+    "Ambessa": {
+        "estilos": "Mystical / War Chant",
+        "musica": {
+            "name": "The Planets, Op. 32: 1. Mars, The Bringer of War",
+            "artist": "Gustav Holst",
+            "mbid": "913d056d-0c74-4045-8fbf-b2d5fcaa51f0"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ambessa_0.jpg"
+    },
+    "Amumu": {
+        "estilos": "Sad Melodic / Emo Rock",
+        "musica": {
+            "name": "The Curse",
+            "artist": "Agnes Ob\u00e9l",
+            "mbid": "e37e1581-5d5d-476f-9e11-b357c0eead81"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg"
+    },
+    "Anivia": {
+        "estilos": "Mystical / Ambient Orchestral",
+        "musica": {
+            "name": "Prologue / Anvil of Crom",
+            "artist": "Basil Poledouris",
+            "mbid": "098e5e3a-e1ef-4446-8c46-3951198ebdae"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg"
+    },
+    "Annie": {
+        "estilos": "Creepy Piano / Dark Classical",
+        "musica": {
+            "name": "Lullaby",
+            "artist": "Queens of the Stone Age",
+            "mbid": "a33f02c6-ea4c-4f6a-97f0-07adbc4c097f"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg"
+    },
+    "Aphelios": {
+        "estilos": "Mystical / Ambient Electronic",
+        "musica": {
+            "name": "Midnight City",
+            "artist": "M83 (duplicate 1)",
+            "mbid": "05fb4eca-b785-34d0-94e0-1578701190ca"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg"
+    },
+    "Ashe": {
+        "estilos": "Nordic Folk / Epic Orchestral",
+        "musica": {
+            "name": "The Dragonborn Comes - Extended Version",
+            "artist": "Malukah",
+            "mbid": "36b9410a-f496-49d0-bc02-b52039c3541d"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg"
+    },
+    "Aurelion Sol": {
+        "estilos": "Cinematic Space / Grandiose Orchestral",
+        "musica": {
+            "name": "Also sprach Zarathustra, Op. 30",
+            "artist": "Richard Strauss",
+            "mbid": "efbfefe1-c74a-4778-9c75-ad1bc4e7684a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg"
+    },
+    "Aurora": {
+        "estilos": "Ambient / Mystical Ambient",
+        "musica": {
+            "name": "Runaway",
+            "artist": "Aurora",
+            "mbid": "0026b8bf-374e-4b03-93a2-46c30f589d4a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aurora_0.jpg"
+    },
+    "Azir": {
+        "estilos": "Desert Mystical / Imperial Orchestral",
+        "musica": {
+            "name": "Ten Plagues Of Egypt",
+            "artist": "Dawn of Destiny",
+            "mbid": "18a141e3-845b-472e-bf71-c6c9e9173f75"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg"
+    },
+    "Bardo": {
+        "estilos": "Ambient Cosmic / World Music",
+        "musica": {
+            "name": "Adiemus",
+            "artist": "Adiemus & Karl Jenkins",
+            "mbid": "e4d7cd12-2d1e-4294-8ff3-bb7256b78361"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg"
+    },
+    "Bel'Veth": {
+        "estilos": "Void Dark Ambient / Dissonant Orchestral",
+        "musica": {
+            "name": "The Dream Of The Fisherman's Wife",
+            "artist": "Molior Superum",
+            "mbid": "230ca404-914f-46cb-9d2c-d38c38a3e76a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg"
+    },
+    "Blitzcrank": {
+        "estilos": "Industrial Electronica / Chiptune",
+        "musica": {
+            "name": "Around the World",
+            "artist": "Daft Punk",
+            "mbid": "81cfb36c-aa89-4490-80ec-331db3561ccb"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg"
+    },
+    "Brand": {
+        "estilos": "Fiery Orchestral / Dark Metal",
+        "musica": {
+            "name": "Du hast (English version)",
+            "artist": "Rammstein",
+            "mbid": "05dc0992-1e9b-38b4-8537-0f983efa7ced"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg"
+    },
+    "Braum": {
+        "estilos": "Nordic Folk / Heartwarming Orchestral",
+        "musica": {
+            "name": "Yuve Yuve Yu",
+            "artist": "The HU",
+            "mbid": "3f7a4c37-8c7b-4d02-b81b-dced47c56348"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg"
+    },
+    "Briar": {
+        "estilos": "Haunted Folk / Gothic Rock",
+        "musica": {
+            "name": "Bloodletting (The Vampire Song)",
+            "artist": "Concrete Blonde",
+            "mbid": "b1e9904f-d6d0-48fb-a1ae-3eed802cc637"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar_0.jpg"
+    },
+    "Caitlyn": {
+        "estilos": "Steampunk Jazz / Detective Noir",
+        "musica": {
+            "name": "A Little Party Never Killed Nobody (All We Got)",
+            "artist": "Fergie",
+            "mbid": "a018b05d-e107-4992-a38a-d18fa8fcf37b"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg"
+    },
+    "Camille": {
+        "estilos": "Steampunk Electronic / Classical Fusion",
+        "musica": {
+            "name": "Crystallize",
+            "artist": "Lindsey Stirling",
+            "mbid": "06710fec-7477-3668-ac48-31b842875317"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg"
+    },
+    "Cassiopeia": {
+        "estilos": "Desert Mystical / Dark Orchestral",
+        "musica": {
+            "name": "In the Hall of the Mountain King",
+            "artist": "Edvard Grieg",
+            "mbid": "6932bf16-87fb-4e6a-9286-b25048ebeb8e"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg"
+    },
+    "Cho'Gath": {
+        "estilos": "Void Dark Ambient / Death Metal",
+        "musica": {
+            "name": "Godzilla",
+            "artist": "Eminem",
+            "mbid": "3b1808a9-a935-46ae-add1-7485af7e67e1"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg"
+    },
+    "Corki": {
+        "estilos": "Electronic Pop / Classic Rock",
+        "musica": {
+            "name": "Danger Zone",
+            "artist": "Kenny Loggins",
+            "mbid": "e283f084-4ca9-4b8e-9952-f9ad366830f7"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg"
+    },
+    "Darius": {
+        "estilos": "Military Industrial / Martial Orchestral",
+        "musica": {
+            "name": "The Hand That Feeds (Photek Straight Remix)",
+            "artist": "Nine Inch Nails",
+            "mbid": "7756414e-98d0-45e7-99f4-4c1b3d9ef734"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg"
+    },
+    "Diana": {
+        "estilos": "Celestial Choir / Dark Synthwave",
+        "musica": {
+            "name": "Genesis",
+            "artist": "Grimes",
+            "mbid": "d64dfb83-5565-4d6f-988f-e9923db0b694"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg"
+    },
+    "Draven": {
+        "estilos": "Military Rock / Glam Metal",
+        "musica": {
+            "name": "Welcome To The Jungle",
+            "artist": "Guns 'N' Roses",
+            "mbid": "50095f55-c5bb-4fb4-b6d6-41ff71cb0bed"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
+    },
+    "Dr. Mundo": {
+        "estilos": " Industrial Rock / Comedy Punk",
+        "musica": {
+            "name": "Du Hast",
+            "artist": "Rammstien",
+            "mbid": "01233516-65d3-4959-812a-742fa21b5ddc"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg"
+    },
+    "Ekko": {
+        "estilos": "Electronic Hip-Hop / Lo-Fi",
+        "musica": {
+            "name": "Feel Good Inc.",
+            "artist": "Gorillaz feat. De La Soul",
+            "mbid": "3c53819a-b130-49ea-921b-13cbf2441021"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg"
+    },
+    "Elise": {
+        "estilos": "Oriental Dark / Gothic Orchestral",
+        "musica": {
+            "name": "Toccata and Fugue in D Minor, BWV 565",
+            "artist": "Johann Sebastian Bach",
+            "mbid": "5bb98cce-9a8a-4a72-8a17-cd9fd014cfe2"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg"
+    },
+    "Evelynn": {
+        "estilos": "Dark Pop / Electro",
+        "musica": {
+            "name": "bad guy",
+            "artist": "Billie Eilish",
+            "mbid": "694da04d-1ffc-435c-8b4b-59cc23ac8003"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg"
+    },
+    "Ezreal": {
+        "estilos": "Adventurous Orchestral / Pop Punk",
+        "musica": {
+            "name": "The Anthem",
+            "artist": "Good Charlotte",
+            "mbid": "a9beef14-c405-46de-94eb-371ab3b446be"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg"
+    },
+    "Fiddlesticks": {
+        "estilos": "Horror Ambient / Noise",
+        "musica": {
+            "name": "Come to Daddy (Pappy mix)",
+            "artist": "Aphex Twin",
+            "mbid": "7c22ff37-4987-42b3-9810-68d9360882d2"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg"
+    },
+    "Fiora": {
+        "estilos": "Orchestral Duel / Classical Fencing",
+        "musica": {
+            "name": "The Duellists - 2015 Remaster",
+            "artist": "Iron Maiden",
+            "mbid": "863de526-6857-4255-9e7e-7dfff4fd707e"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg"
+    },
+    "Fizz": {
+        "estilos": "Sea Shanty / Tropical House",
+        "musica": {
+            "name": "Under The Sea",
+            "artist": "Samuel E Wright",
+            "mbid": "e03a96ff-213a-3698-873e-98f3f4ee5147"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg"
+    },
+    "Galio": {
+        "estilos": "Epic Orchestral / Heroic Choir",
+        "musica": {
+            "name": "The Last Stand",
+            "artist": "Sabaton",
+            "mbid": "126a7de3-783b-4d1a-a2fc-8e4e8167de16"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg"
+    },
+    "Gangplank": {
+        "estilos": "Sea Shanty / Pirate Metal",
+        "musica": {
+            "name": "Last Saskatchewan Pirate",
+            "artist": "Arrogant Worms",
+            "mbid": "074486b8-934d-350d-b0b3-dd16f4272f22"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg"
+    },
+    "Garen": {
+        "estilos": "Orchestral Heroic / Power Metal",
+        "musica": {
+            "name": "Indestructible",
+            "artist": "Disturbed",
+            "mbid": "06b4725d-9935-3f79-a1f4-2d289168ab89"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg"
+    },
+    "Gnar": {
+        "estilos": "Nordic Folk / Prehistoric Rock",
+        "musica": {
+            "name": "Walk The Dinosaur",
+            "artist": "Was {Not Was}",
+            "mbid": "56438f7d-b42c-3283-9093-515ea7552d41"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gnar_0.jpg"
+    },
+    "Gragas": {
+        "estilos": "Nordic Folk / Tavern Music",
+        "musica": {
+            "name": "Drink",
+            "artist": "Alestorm",
+            "mbid": "0a17f04b-6c23-474f-90d9-826a4932b3dc"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg"
+    },
+    "Graves": {
+        "estilos": "Sea Shanty / Southern Rock",
+        "musica": {
+            "name": "Bad To The Bone",
+            "artist": "George Thorogood & The Destroy",
+            "mbid": "3c29548b-b1de-407a-be07-19fe80347191"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg"
+    },
+    "Gwen": {
+        "estilos": "Haunted Strings / Pop Rock",
+        "musica": {
+            "name": "Wake Me up Inside (Can't Wake up)",
+            "artist": "Harto Fali\u00f3n",
+            "mbid": "a4c03025-4dc7-4235-ba28-9b9825e41268"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg"
+    },
+    "Hecarim": {
+        "estilos": "Haunted Epic / Symphonic Metal",
+        "musica": {
+            "name": "Ghost Division",
+            "artist": "Sabaton",
+            "mbid": "65171c6b-5eac-4f24-96a9-9abaffef2fb1"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg"
+    },
+    "Heimerdinger": {
+        "estilos": "Electronic Pop / Math Rock",
+        "musica": {
+            "name": "Science Genius Girl (Robotkid's Lameboy Mix)",
+            "artist": "Freezepop",
+            "mbid": "d21491e0-6e9a-46cc-a9f3-42ae30f847cc"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg"
+    },
+    "Hwei": {
+        "estilos": "Oriental Mystical / Melancholic Piano",
+        "musica": {
+            "name": "Comptine D'un Autre \u00c9t\u00e9: L'apr\u00e8s Midi",
+            "artist": "Yann Tiersen",
+            "mbid": "128c3357-3535-4376-aced-9e29d808a980"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hwei_0.jpg"
+    },
+    "Illaoi": {
+        "estilos": "Sea Shanty / Tribal Chant",
+        "musica": {
+            "name": "He Mele No Lilo",
+            "artist": "Mark Keali\u02bbi Ho\u02bbomalu and Kamehameha Schools Children's Chorus",
+            "mbid": "1b823b72-4321-349d-821a-215cd064178a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Illaoi_0.jpg"
+    },
+    "Irelia": {
+        "estilos": "Traditional Japanese / Orchestral Dance",
+        "musica": {
+            "name": "River Flows in You",
+            "artist": "Yiruma",
+            "mbid": "3c12866c-0316-4a96-ad35-2370b719a148"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg"
+    },
+    "Ivern": {
+        "estilos": "Forest Ambient / Gentle Folk",
+        "musica": {
+            "name": "Concerning Hobbits",
+            "artist": "Mikel",
+            "mbid": "d81f293a-6ea9-44ba-9856-472ebb55d963"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg"
+    },
+    "Janna": {
+        "estilos": "Industrial Electronica / Ethereal Wave",
+        "musica": {
+            "name": "Oxygene, Pt. 4",
+            "artist": "Jean Michel Jarre",
+            "mbid": "0a795933-f070-300c-9319-699733ce0f8f"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg"
+    },
+    "Jarvan IV": {
+        "estilos": "Orchestral Heroic / Martial Anthem",
+        "musica": {
+            "name": "A Warrior's Call",
+            "artist": "Volbeat vs. Kessler",
+            "mbid": "06d34e8a-e8ca-4efa-a1c1-4bdb349e3e23"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg"
+    },
+    "Jax": {
+        "estilos": "Martial Orchestral / Funk Rock",
+        "musica": {
+            "name": "Don't Stop Me Now",
+            "artist": "First to Eleven",
+            "mbid": "1915e89e-38d5-49b9-af52-1d75b7435fa5"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg"
+    },
+    "Jayce": {
+        "estilos": "Steampunk Heroic / Modern Rock",
+        "musica": {
+            "name": "Uprising",
+            "artist": "The Muse",
+            "mbid": "03869c3c-d55c-4b8f-8ac1-84720e12ef7f"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg"
+    },
+    "Jhin": {
+        "estilos": "Cinematic Dark / Opera",
+        "musica": {
+            "name": "Danse Macabre",
+            "artist": "Saint-Sa\u00ebns",
+            "mbid": "936ef5ae-98ba-4f65-83cc-10d0c6f88676"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg"
+    },
+    "Jinx": {
+        "estilos": "Industrial Punk / Anarcho-Pop",
+        "musica": {
+            "name": "Sabotage",
+            "artist": "Bebe Rexha",
+            "mbid": "2bb73040-af96-41df-ba5b-c6eba3e41a36"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg"
+    },
+    "Kai'Sa": {
+        "estilos": "Void Dark Ambient / Future Bass",
+        "musica": {
+            "name": "Emerge",
+            "artist": "Fellsilent",
+            "mbid": "9bd9333a-7306-3a13-ba14-ea25032120fa"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg"
+    },
+    "Kalista": {
+        "estilos": "Haunted Epic / Vengeful Orchestral",
+        "musica": {
+            "name": "Dies irae",
+            "artist": "Giuseppe Verdi",
+            "mbid": "94a18800-e021-413a-ba3c-8786856ad47e"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg"
+    },
+    "Karma": {
+        "estilos": "Traditional Japanese / Spiritual Ambient",
+        "musica": {
+            "name": "Advent: One Winged Angel",
+            "artist": "Nobuo Uematsu",
+            "mbid": "01c81a8b-bc8d-4b81-a162-0b97f963127b"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg"
+    },
+    "Karthus": {
+        "estilos": "Haunted Choir / Death Metal",
+        "musica": {
+            "name": "O Fortuna",
+            "artist": "Apotheosis",
+            "mbid": "0d7057c7-b87f-3154-a046-acb9a851ca29"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg"
+    },
+    "Kassadin": {
+        "estilos": "Desert Mystical / Dark Ambient",
+        "musica": {
+            "name": "The Host Of Seraphim",
+            "artist": "Gerrard, Lisa",
+            "mbid": "53f55b88-e3f7-37f7-b77b-df0c2564a1cc"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg"
+    },
+    "Katarina": {
+        "estilos": "Military Industrial / EBM",
+        "musica": {
+            "name": "Stigmata",
+            "artist": "Arch Enemy",
+            "mbid": "5528134a-deff-336f-82b3-46422c202501"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg"
+    },
+    "Kayle": {
+        "estilos": "Orchestral Choir / Power Metal",
+        "musica": {
+            "name": "Angel of Salvation",
+            "artist": "Galneryus",
+            "mbid": "19e94202-61aa-401b-b8f1-91d3b900e528"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg"
+    },
+    "Kayn": {
+        "estilos": "Dark Epic / Alternative Metal",
+        "musica": {
+            "name": "Duality",
+            "artist": "Slipknot",
+            "mbid": "023dcf4c-6a94-35d0-b700-650c2e9e2d42"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg"
+    },
+    "Kennen": {
+        "estilos": "Electronic Pop / J-Rock",
+        "musica": {
+            "name": "Through the Fire and Flames",
+            "artist": "DragonForce",
+            "mbid": "0a0e045a-f03a-4a40-946b-296e89571642"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg"
+    },
+    "Kha'Zix": {
+        "estilos": "Void Dark Ambient / Industrial",
+        "musica": {
+            "name": "Closer",
+            "artist": "The Chainsmokers",
+            "mbid": "fb7963d0-d06f-45ca-a647-2b00a963179f"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg"
+    },
+    "Kindred": {
+        "estilos": "Mystical Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg"
+    },
+    "Kled": {
+        "estilos": "Military Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg"
+    },
+    "Kog'Maw": {
+        "estilos": "Void Dark Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg"
+    },
+    "K'Sante": {
+        "estilos": "Epic Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KSante_0.jpg"
+    },
+    "LeBlanc": {
+        "estilos": "Noxian Dark",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg"
+    },
+    "Lee Sin": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg"
+    },
+    "Leona": {
+        "estilos": "Celestial Choir",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg"
+    },
+    "Lillia": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg"
+    },
+    "Lissandra": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg"
+    },
+    "Lucian": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg"
+    },
+    "Lulu": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg"
+    },
+    "Lux": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg"
+    },
+    "Malphite": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg"
+    },
+    "Malzahar": {
+        "estilos": "Void Dark Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg"
+    },
+    "Maokai": {
+        "estilos": "Forest Dark",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg"
+    },
+    "Master Yi": {
+        "estilos": "Traditional Chinese / Martial Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg"
+    },
+    "Mel": {
+        "estilos": "Mystical Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mel_0.jpg"
+    },
+    "Milio": {
+        "estilos": "Cheerful Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Milio_0.jpg"
+    },
+    "Miss Fortune": {
+        "estilos": "Sea Shanty",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg"
+    },
+    "Wukong": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg"
+    },
+    "Mordekaiser": {
+        "estilos": "Haunted Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg"
+    },
+    "Morgana": {
+        "estilos": "Orchestral Dark",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg"
+    },
+    "Naafiri": {
+        "estilos": "Haunted Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Naafiri_0.jpg"
+    },
+    "Nami": {
+        "estilos": "Mystical Sea",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg"
+    },
+    "Nasus": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg"
+    },
+    "Nautilus": {
+        "estilos": "Sea Shanty",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg"
+    },
+    "Neeko": {
+        "estilos": "Ixtal Tribal",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg"
+    },
+    "Nidalee": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg"
+    },
+    "Nilah": {
+        "estilos": "Festive Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nilah_0.jpg"
+    },
+    "Nocturne": {
+        "estilos": "Dark Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg"
+    },
+    "Nunu e Willump": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg"
+    },
+    "Olaf": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg"
+    },
+    "Orianna": {
+        "estilos": "Steampunk Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg"
+    },
+    "Ornn": {
+        "estilos": "Nordic Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg"
+    },
+    "Pantheon": {
+        "estilos": "Celestial Choir",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg"
+    },
+    "Poppy": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg"
+    },
+    "Pyke": {
+        "estilos": "Sea Shanty",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg"
+    },
+    "Qiyana": {
+        "estilos": "Ixtal Tribal",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg"
+    },
+    "Quinn": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg"
+    },
+    "Rakan": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg"
+    },
+    "Rammus": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg"
+    },
+    "Rek'Sai": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg"
+    },
+    "Rell": {
+        "estilos": "Military Industrial",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg"
+    },
+    "Renata Glasc": {
+        "estilos": "Industrial Electronica",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renata_0.jpg"
+    },
+    "Renekton": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg"
+    },
+    "Rengar": {
+        "estilos": "Ixtal Tribal",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg"
+    },
+    "Riven": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg"
+    },
+    "Rumble": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg"
+    },
+    "Ryze": {
+        "estilos": "Mystical Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg"
+    },
+    "Samira": {
+        "estilos": "Military Rock",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg"
+    },
+    "Sejuani": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg"
+    },
+    "Senna": {
+        "estilos": "Haunted Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg"
+    },
+    "Seraphine": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg"
+    },
+    "Sett": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg"
+    },
+    "Shaco": {
+        "estilos": "Dark Circus",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg"
+    },
+    "Shen": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg"
+    },
+    "Shyvana": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg"
+    },
+    "Singed": {
+        "estilos": "Industrial Punk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg"
+    },
+    "Sion": {
+        "estilos": "Military Industrial",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg"
+    },
+    "Sivir": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg"
+    },
+    "Skarner": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg"
+    },
+    "Smolder": {
+        "estilos": "Epic Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Smolder_0.jpg"
+    },
+    "Sona": {
+        "estilos": "Orchestral Melodic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg"
+    },
+    "Soraka": {
+        "estilos": "Celestial Choir",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg"
+    },
+    "Swain": {
+        "estilos": "Military Industrial",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg"
+    },
+    "Sylas": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg"
+    },
+    "Syndra": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg"
+    },
+    "Tahm Kench": {
+        "estilos": "Sea Shanty",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg"
+    },
+    "Taliyah": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg"
+    },
+    "Talon": {
+        "estilos": "Stealth Dark Orchestral",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg"
+    },
+    "Taric": {
+        "estilos": "Celestial Choir",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg"
+    },
+    "Teemo": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg"
+    },
+    "Thresh": {
+        "estilos": "Haunted Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg"
+    },
+    "Tristana": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg"
+    },
+    "Trundle": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg"
+    },
+    "Tryndamere": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg"
+    },
+    "Twisted Fate": {
+        "estilos": "Sea Shanty",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg"
+    },
+    "Twitch": {
+        "estilos": "Industrial Punk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg"
+    },
+    "Udyr": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg"
+    },
+    "Urgot": {
+        "estilos": "Industrial Punk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg"
+    },
+    "Varus": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg"
+    },
+    "Vayne": {
+        "estilos": "Orchestral Heroic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg"
+    },
+    "Veigar": {
+        "estilos": "Electronic Pop",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg"
+    },
+    "Vel'Koz": {
+        "estilos": "Void Dark Ambient",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg"
+    },
+    "Vex": {
+        "estilos": "Dark Melodic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vex_0.jpg"
+    },
+    "Vi": {
+        "estilos": "Orchestral Electronic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg"
+    },
+    "Viego": {
+        "estilos": "Haunted Epic",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg"
+    },
+    "Viktor": {
+        "estilos": "Industrial Electronica",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg"
+    },
+    "Vladimir": {
+        "estilos": "Military Industrial",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg"
+    },
+    "Volibear": {
+        "estilos": "Nordic Folk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg"
+    },
+    "Warwick": {
+        "estilos": "Industrial Punk",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg"
+    },
+    "Xayah": {
+        "estilos": "Traditional Japanese",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg"
+    },
+    "Xerath": {
+        "estilos": "Desert Mystical",
+        "musica": {
+            "name": "",
+            "artist": "",
+            "mbid": ""
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg"
+    },
+    "Xin Zhao": {
+        "estilos": "Traditional Chinese / Martial Orchestral",
+        "musica": {
+            "name": "I'll Make a Man out of You",
+            "artist": "Mulan",
+            "mbid": "fbdbadfb-c9eb-45d8-ab2b-2d8ea1e3c83e"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg"
+    },
+    "Yasuo": {
+        "estilos": "Traditional Japanese / Melodic Rock",
+        "musica": {
+            "name": "Stairway to Heaven - Remaster",
+            "artist": "Led Zeppelin",
+            "mbid": "ccfdd180-22e1-49b9-bd81-b5fcf2c6474e"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg"
+    },
+    "Yone": {
+        "estilos": "Traditional Japanese / Metalcore",
+        "musica": {
+            "name": "Numb",
+            "artist": "Linkin Park",
+            "mbid": "468ba3ac-5255-4c18-970e-59d890765bd9"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg"
+    },
+    "Yorick": {
+        "estilos": "Haunted Orchestral / Doom Metal",
+        "musica": {
+            "name": "For Whom The Bell Tolls (Remastered)",
+            "artist": "Metallica",
+            "mbid": "38dce4ad-f1c0-4602-9a58-dc50d70a2420"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg"
+    },
+    "Yunara": {
+        "estilos": "Mystical / Ambient Folk",
+        "musica": {
+            "name": "Fields of Gold",
+            "artist": "Eva Cassidy",
+            "mbid": "6c141d29-7be4-4960-be30-10f2b9694e81"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yunara_0.jpg"
+    },
+    "Yuumi": {
+        "estilos": "Electronic Pop / Nyan Cat-core",
+        "musica": {
+            "name": "Nyan Cat Theme",
+            "artist": "Nyan Cat",
+            "mbid": "2ef7eda6-1c77-449c-bcfe-73a8f45cf3f9"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg"
+    },
+    "Zac": {
+        "estilos": "Industrial Electronica / Funk",
+        "musica": {
+            "name": "Another One Bites The Dust - Remastered 2011",
+            "artist": "Queen",
+            "mbid": "cad635b2-ebe5-4ada-8e37-01a26081db5b"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg"
+    },
+    "Zed": {
+        "estilos": "Traditional Japanese / Dubstep",
+        "musica": {
+            "name": "FIRST OF THE YEAR (EQUINOX)",
+            "artist": "Skrilex",
+            "mbid": "0d6c1398-63b4-48d6-a9d6-caa25e0ef72d"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg"
+    },
+    "Zeri": {
+        "estilos": "Industrial Electronica / Hyperpop",
+        "musica": {
+            "name": "Run Boy Run",
+            "artist": "Woodkid",
+            "mbid": "4a0a7d99-a2af-46c4-8a96-2f23d0fb4a19"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zeri_0.jpg"
+    },
+    "Ziggs": {
+        "estilos": "Industrial Punk / Ska Punk",
+        "musica": {
+            "name": "TNT",
+            "artist": "AC-DC",
+            "mbid": "dc9618d5-a083-4d20-b116-2e83974cc44a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg"
+    },
+    "Zilean": {
+        "estilos": "Mystical Ambient / Psychedelic Rock",
+        "musica": {
+            "name": "Time",
+            "artist": "Pink Floyd",
+            "mbid": "fa5bdb27-4bdb-31a5-9417-97e828bb2d85"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg"
+    },
+    "Zoe": {
+        "estilos": "Celestial Pop / Space Disco",
+        "musica": {
+            "name": "Shooting Stars",
+            "artist": "Monster High",
+            "mbid": "42e1e7bb-4fa8-44fe-b657-9997d0469542"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg"
+    },
+    "Zyra": {
+        "estilos": "Dark Ambient / Trip-Hop",
+        "musica": {
+            "name": "The Beautiful People (live)",
+            "artist": "Marilyn Manson",
+            "mbid": "21255277-bc72-43e2-88c7-f620d696741a"
+        },
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg"
+    }
+}

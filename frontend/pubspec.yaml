@@ -1,0 +1,29 @@
+name: riot_spotify_flutter
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.5.0
+  path: ^1.9.1
+  provider: ^6.0.5
+  font_awesome_flutter: ^10.10.0
+  audioplayers: ^6.5.1
+  flutter_chips_input: ^2.0.0
+  chips_choice: ^3.0.1
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/certs/cacert.pem
+    - assets/genres.txt
