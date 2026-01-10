@@ -70,7 +70,7 @@ def setup_ytdlp():
 
 
 def main():
-    logger.info("🛠️  Iniciando setup de dependências externas...\n")
+    logger.info("🛠️  Iniciando setup de dependências externas...")
 
     if not BACKEND_DIR.exists():
         logger.info(
@@ -79,10 +79,9 @@ def main():
         return
 
     setup_ytdlp()
-    logger.info("-" * 30)
     setup_ffmpeg()
 
-    logger.info("\nSetup finalizado! Agora você pode rodar o build.")
+    logger.info("Setup finalizado! Agora você pode rodar o build.")
 
 
 if __name__ == "__main__":

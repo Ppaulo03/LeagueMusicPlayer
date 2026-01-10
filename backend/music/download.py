@@ -10,12 +10,29 @@ import tempfile
 from pathlib import Path
 import json
 from loguru import logger
-
+import sys
 from music.queue import PlaybackQueue
 
+
+def get_base_path():
+    """
+    Retorna o caminho base correto, dependendo se está rodando
+    como script (.py) ou executável compilado (.exe).
+    """
+    if getattr(sys, "frozen", False):
+        base_path = Path(sys.executable).parent
+        internal_path = base_path / "_internal"
+        if internal_path.exists():
+            return internal_path
+        return base_path
+    else:
+        return Path(__file__).parent.parent
+
+
 # Constants
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = get_base_path()
 FFMPEG_PATH = BASE_DIR / "ffmpeg" / "bin" / "ffmpeg.exe"
+YT_DLP_PATH = BASE_DIR / "yt-dlp.exe"
 CACHE_PREFIX = "playlist_"
 
 # Shared queue for downloads
@@ -23,7 +40,7 @@ _download_queue = queue.Queue()
 
 try:
     logger.info("Checking for yt-dlp updates...")
-    update_command = ["yt-dlp.exe", "-U"]
+    update_command = [str(YT_DLP_PATH), "-U"]
     subprocess.run(update_command, check=True, capture_output=True)
     logger.info("yt-dlp is up to date.")
 except Exception as e:

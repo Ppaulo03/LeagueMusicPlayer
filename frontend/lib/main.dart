@@ -1,37 +1,54 @@
 import 'dart:io';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
+import 'package:league_music_player/bootsrap.dart';
 import 'package:provider/provider.dart';
-import 'package:league_music_player/core/constants/app_constants.dart';
 import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
-import 'package:league_music_player/services/backend_service.dart';
 import 'package:league_music_player/features/home/view/home_screen.dart';
 import 'package:league_music_player/features/settings/viewmodel/config_viewmodel.dart';
 
 Process? backendProcess;
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  final sslData = await rootBundle.load('assets/certs/cacert.pem');
-  final context = SecurityContext.defaultContext;
-  context.setTrustedCertificatesBytes(sslData.buffer.asUint8List());
-  if (kReleaseMode) {
-    backendProcess = await startBackend();
-  }
-  port = (await getBackendPort())!;
-  await Future.delayed(const Duration(seconds: 1));
-  runApp(const MyApp());
-  if (kReleaseMode) {
-    ProcessSignal.sigint.watch().listen((_) {
-      backendProcess?.kill();
-    });
-  }
+  runApp(const AppBootstrap());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _killBackend();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.detached) {
+      _killBackend();
+    }
+  }
+
+  void _killBackend() {
+    if (backendProcess != null) {
+      debugPrint("Matando o processo do backend...");
+      backendProcess!.kill();
+      backendProcess = null; // Limpa a referência
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +56,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => ConfigViewModel()),
         ChangeNotifierProvider(
-          create: (context) => HomeViewModel(
-            context.read<ConfigViewModel>(), // Pega a instância criada acima
-          )..init(),
+          create: (context) =>
+              HomeViewModel(context.read<ConfigViewModel>())..init(),
         ),
       ],
       child: MaterialApp(

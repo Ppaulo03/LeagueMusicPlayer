@@ -2,6 +2,7 @@ import shutil
 import subprocess
 from pathlib import Path
 from loguru import logger
+from setup import main as setup_main
 
 BASE_DIR = Path(".")
 BACKEND_DIR = Path("backend")
@@ -48,6 +49,12 @@ def main():
     # 1. Limpar builds anteriores (opcional, mas recomendado)
     if PYTHON_DIST_DIR.exists():
         shutil.rmtree(PYTHON_DIST_DIR)
+
+    if FINAL_OUTPUT_DIR.exists():
+        shutil.rmtree(FINAL_OUTPUT_DIR)
+
+    # Setup dependências externas (FFmpeg, yt-dlp)
+    setup_main()
 
     # 2. Buildar o Backend Python
     logger.info("Compilando Backend (PyInstaller)...")

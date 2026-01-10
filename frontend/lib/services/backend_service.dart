@@ -15,44 +15,64 @@ Future<Process?> startBackend() async {
       await portFile.delete();
     }
 
-    final exePath = p.join(Directory.current.path, 'backend', 'app.exe');
-    final process = await Process.start('cmd', [
-      '/k',
-      exePath,
-    ], runInShell: true);
+    String exeDir = p.join(p.dirname(Platform.resolvedExecutable), 'backend');
+    final exePath = p.join(exeDir, 'app.exe');
 
+    debugPrint('Iniciando backend em: $exePath');
+    final process = await Process.start(
+      exePath,
+      [],
+      runInShell: false,
+      mode: ProcessStartMode.normal,
+    );
     process.stdout.transform(SystemEncoding().decoder).listen((data) {
-      debugPrint('[stdout] $data');
+      debugPrint('[Backend OUT] $data');
     });
 
     process.stderr.transform(SystemEncoding().decoder).listen((data) {
-      debugPrint('[stderr] $data');
+      debugPrint('[Backend ERR] $data');
     });
+
     return process;
-  } catch (e) {
+  } catch (e, stackTrace) {
+    debugPrint('Erro ao iniciar backend: $e');
+    debugPrint(stackTrace.toString());
     return null;
   }
 }
 
 Future<int?> getBackendPort() async {
+  // Tenta por aproximadamente 20 segundos (100 * 200ms)
   for (int i = 0; i < 100; i++) {
-    if (await portFile.exists()) {
-      final content = await portFile.readAsString();
-      final data = json.decode(content);
-      return data['port'];
+    try {
+      if (await portFile.exists()) {
+        final content = await portFile.readAsString();
+        final data = json.decode(content);
+        final int? candidatePort = data['port'];
+        if (candidatePort != null) {
+          final isReady = await testPing(candidatePort);
+          if (isReady) {
+            return candidatePort;
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint('Erro ao tentar ler a porta: $e');
     }
     await Future.delayed(const Duration(milliseconds: 200));
   }
-  return null;
+
+  return null; // Timeout
 }
 
-Future<bool> testPing() async {
-  if (port == 0) return false;
+Future<bool> testPing(int port) async {
   try {
     final uri = Uri.parse('http://127.0.0.1:$port/ping');
-    final res = await http.get(uri).timeout(const Duration(seconds: 3));
+    final res = await http.get(uri).timeout(const Duration(milliseconds: 500));
+    debugPrint('Ping status code: ${res.statusCode}');
     return res.statusCode >= 200 && res.statusCode < 300;
-  } catch (_) {
+  } catch (e) {
+    debugPrint('Ping error: $e');
     return false;
   }
 }
