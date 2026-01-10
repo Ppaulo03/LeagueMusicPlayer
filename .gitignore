@@ -81,6 +81,7 @@ backend/dist/
 backend/config.json
 
 release_final/
+release_final.zip
 
 *.egg-info/
 .eggs/
