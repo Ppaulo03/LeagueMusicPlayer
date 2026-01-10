@@ -50,6 +50,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
             _apiKeyController.text = viewModel.config!.apiKey ?? '';
           }
 
+          // Reset controllers to config values when there's an error
+          if (viewModel.hasError) {
+            _modelController.text = viewModel.config?.model ?? '';
+            _apiKeyController.text = viewModel.config?.apiKey ?? '';
+          }
+
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -73,7 +79,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
-                  onPressed: _saveConfig,
+                  onPressed: () => _saveConfig(viewModel),
                   child: const Text('Salvar'),
                 ),
                 if (viewModel.hasError)
@@ -85,6 +91,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                if (viewModel.hasSuccess)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16),
+                    child: Text(
+                      viewModel.successMessage!,
+                      style: const TextStyle(color: Colors.green),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
               ],
             ),
           );
@@ -93,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  void _saveConfig() {
+  void _saveConfig(ConfigViewModel viewModel) {
     final model = _modelController.text.trim();
     final apiKey = _apiKeyController.text.trim();
 
@@ -101,6 +116,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       model: model.isEmpty ? null : model,
       apiKey: apiKey.isEmpty ? null : apiKey,
     );
+
+    // Check if there are changes
+    if (viewModel.config != null &&
+        viewModel.config!.model == newConfig.model &&
+        viewModel.config!.apiKey == newConfig.apiKey) {
+      // No changes, do nothing
+      return;
+    }
 
     context.read<ConfigViewModel>().updateConfig(newConfig);
   }

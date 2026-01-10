@@ -105,19 +105,22 @@ def gerar_musicas_por_tema(campeao: str, tema: TemaMusical, qtd: int) -> List[st
 
 
 def gerar_playlist(campeao: str, total_alvo: int = 50):
-    playlist_final = []
+    try:
+        playlist_final = []
 
-    # 1. Pega 5 temas (Ex: Yasuo -> Hip Hop, Flauta Japonesa, Epic Rock, etc)
-    temas = gerar_temas(campeao)
+        # 1. Pega 5 temas (Ex: Yasuo -> Hip Hop, Flauta Japonesa, Epic Rock, etc)
+        temas = gerar_temas(campeao)
 
-    # Calcula quantas músicas por tema (ex: 50 / 5 = 10 músicas por tema)
-    musicas_por_tema = total_alvo // len(temas)
+        # Calcula quantas músicas por tema (ex: 50 / 5 = 10 músicas por tema)
+        musicas_por_tema = total_alvo // len(temas)
 
-    # 2. Loop para preencher
-    for tema in temas:
-        queries = gerar_musicas_por_tema(campeao, tema, musicas_por_tema)
-        playlist_final.extend(queries)
-        # Pequena pausa para não bater no rate limit se estiver usando conta free agressivamente
-        time.sleep(1)
-
+        # 2. Loop para preencher
+        for tema in temas:
+            queries = gerar_musicas_por_tema(campeao, tema, musicas_por_tema)
+            playlist_final.extend(queries)
+            # Pequena pausa para não bater no rate limit se estiver usando conta free agressivamente
+            time.sleep(1)
+    except Exception as e:
+        logger.error(f"Erro ao gerar playlist para {campeao}: {e}")
+        playlist_final = []
     return playlist_final

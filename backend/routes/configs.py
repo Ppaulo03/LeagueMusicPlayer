@@ -33,7 +33,10 @@ def load_config() -> Dict[str, Any]:
         with open(CONFIG_PATH, "r") as f:
             return json.load(f)
     except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Config file not found")
+        default_config = {"model": "llama-3.3-70b-versatile", "api_key": ""}
+        with open(CONFIG_PATH, "w") as f:
+            json.dump(default_config, f)
+        return default_config
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="Invalid config file")
 

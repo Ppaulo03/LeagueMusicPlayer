@@ -1,119 +1,82 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/features/home/view/widgets/game_status_widget.dart';
-import 'package:riot_spotify_flutter/features/home/view/widgets/music_player_widget.dart';
+import 'package:provider/provider.dart';
+import 'package:riot_spotify_flutter/features/home/core/constants/home_constants.dart';
+import 'package:riot_spotify_flutter/features/home/view/components/gradient_background.dart';
+import 'package:riot_spotify_flutter/features/home/view/components/home_app_bar.dart';
+import 'package:riot_spotify_flutter/features/home/view/sections/game_status_section.dart';
+import 'package:riot_spotify_flutter/features/home/view/sections/music_player_section.dart';
 import 'package:riot_spotify_flutter/features/home/viewmodel/home_viewmodel.dart';
 import 'package:riot_spotify_flutter/features/settings/view/settings_screen.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final _viewModel = HomeViewModel();
-
-  @override
-  void initState() {
-    super.initState();
-    _viewModel.init();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: ListenableBuilder(
-          listenable: _viewModel,
-          builder: (context, _) {
-            final colors = _viewModel.championSplashGradient;
-            final gradientColors = (colors != null && colors.isNotEmpty)
-                ? colors.take(2).toList()
-                : [const Color(0xFF1F1C2C), const Color(0xFF928DAB)];
+    return Consumer<HomeViewModel>(
+      builder: (context, vm, _) {
+        final colors = vm.championSplashGradient;
+        final gradientColors = (colors != null && colors.isNotEmpty)
+            ? colors.take(2).toList()
+            : HomeConstants.defaultGradient;
 
-            return AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              centerTitle: true,
-              title: const Text(
-                'Riot Spotify',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                ),
-              ),
-              flexibleSpace: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: gradientColors,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-              ),
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.settings),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const SettingsScreen()),
-                    );
-                  },
-                ),
-              ],
-            );
-          },
-        ),
-      ),
-
-      body: ListenableBuilder(
-        listenable: _viewModel,
-        builder: (context, _) {
-          final colors = _viewModel.championSplashGradient;
-          final gradientColors = (colors != null && colors.isNotEmpty)
-              ? colors.take(2).toList()
-              : [const Color(0xFF1F1C2C), const Color(0xFF928DAB)];
-
-          return Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: gradientColors,
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
+        return Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: HomeAppBar(gradientColors: gradientColors),
+          body: GradientBackground(
+            colors: gradientColors,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: HomeConstants.screenPadding,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    if (vm.isApiKeyMissing) _buildApiKeyWarning(context),
                     const SizedBox(height: 24),
-                    GameStatusWidget(
-                      gameStatus: _viewModel.gameStatus,
-                      championSplash: _viewModel.championSplash,
-                      gradientColors: gradientColors,
-                    ),
-                    const SizedBox(height: 24),
+                    GameStatusSection(gradientColors: gradientColors),
+                    HomeConstants.sectionSpacing,
                     const Spacer(),
-                    MusicPlayerWidget(gradientColors: gradientColors)
+                    MusicPlayerSection(gradientColors: gradientColors),
                   ],
                 ),
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 
-  @override
-  void dispose() {
-    _viewModel.dispose();
-    super.dispose();
+  Widget _buildApiKeyWarning(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.orange.shade100,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.orange.shade300),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.warning, color: Colors.orange.shade800),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              'Chave API não configurada. Vá para as configurações para adicionar sua chave API.',
+              style: TextStyle(color: Colors.orange.shade800),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SettingsScreen()),
+              );
+            },
+            child: const Text('Configurar'),
+          ),
+        ],
+      ),
+    );
   }
 }

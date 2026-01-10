@@ -11,7 +11,7 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-
+frontend/build/
 # IntelliJ related
 *.iml
 *.ipr
@@ -79,6 +79,7 @@ env/
 backend/build/
 backend/dist/
 backend/config/config.json
+
 *.spec
 
 *.egg-info/

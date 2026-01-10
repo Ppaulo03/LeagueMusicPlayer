@@ -15,7 +15,7 @@ from music.queue import PlaybackQueue
 
 # Constants
 BASE_DIR = Path(__file__).parent.parent
-FFMPEG_PATH = BASE_DIR / "ffmpeg-8.0-essentials_build" / "bin" / "ffmpeg.exe"
+FFMPEG_PATH = BASE_DIR / "ffmpeg" / "bin" / "ffmpeg.exe"
 CACHE_PREFIX = "playlist_"
 
 # Shared queue for downloads

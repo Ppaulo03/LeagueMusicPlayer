@@ -4,16 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:riot_spotify_flutter/core/models/game_status.dart';
 import 'package:riot_spotify_flutter/services/apis/game_status_api.dart';
 import 'package:riot_spotify_flutter/services/apis/settings_api.dart';
+import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
 
 class HomeViewModel extends ChangeNotifier {
   final _apiService = GameStatusApi();
   final _settingsApi = SettingsApi();
+  final ConfigViewModel _configViewModel;
   Timer? _refreshTimer;
 
   GameStatus? _gameStatus;
   Map<String, dynamic>? _currentTrack;
   Uint8List? _championSplash;
   bool _isApiKeyMissing = false;
+
+  HomeViewModel(this._configViewModel) {
+    debugPrint("HomeViewModel initialized");
+    _configViewModel.addListener(_onConfigChanged);
+  }
 
   GameStatus? get gameStatus => _gameStatus;
   Map<String, dynamic>? get currentTrack => _currentTrack;
@@ -34,6 +41,7 @@ class HomeViewModel extends ChangeNotifier {
     try {
       final config = await _settingsApi.getConfig();
       _isApiKeyMissing = config?.apiKey == null || config!.apiKey!.isEmpty;
+      debugPrint('API Key missing: $_isApiKeyMissing');
       notifyListeners();
     } catch (e) {
       debugPrint('Error checking API key: $e');
@@ -80,9 +88,15 @@ class HomeViewModel extends ChangeNotifier {
     );
   }
 
+  void _onConfigChanged() {
+    debugPrint("Config changed, checking API key...");
+    _checkApiKey();
+  }
+
   @override
   void dispose() {
     _refreshTimer?.cancel();
+    _configViewModel.removeListener(_onConfigChanged);
     super.dispose();
   }
 }

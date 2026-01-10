@@ -8,6 +8,7 @@ class ConfigViewModel extends ChangeNotifier {
   ConfigModel? _config;
   bool _isLoading = false;
   String? _error;
+  String? _successMessage;
 
   ConfigViewModel({SettingsApi? apiService})
     : _apiService = apiService ?? SettingsApi();
@@ -16,10 +17,12 @@ class ConfigViewModel extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get error => _error;
   bool get hasError => _error != null;
+  String? get successMessage => _successMessage;
+  bool get hasSuccess => _successMessage != null;
 
   Future<void> fetchConfig() async {
     _setLoading(true);
-    _clearError();
+    _clearMessages();
 
     try {
       _config = await _apiService.getConfig();
@@ -33,7 +36,7 @@ class ConfigViewModel extends ChangeNotifier {
 
   Future<void> updateConfig(ConfigModel newConfig) async {
     _setLoading(true);
-    _clearError();
+    _clearMessages();
 
     try {
       final error = await _apiService.updateConfig(newConfig);
@@ -41,6 +44,7 @@ class ConfigViewModel extends ChangeNotifier {
         _setError(error);
       } else {
         _config = newConfig;
+        _setSuccess('Configurações salvas com sucesso!');
       }
     } catch (e) {
       _setError('Erro ao salvar configurações: $e');
@@ -57,11 +61,20 @@ class ConfigViewModel extends ChangeNotifier {
 
   void _setError(String error) {
     _error = error;
+    _successMessage = null;
     notifyListeners();
   }
 
-  void _clearError() {
+  void _setSuccess(String message) {
+    _successMessage = message;
     _error = null;
+    debugPrint('Config update success: $message');
+    notifyListeners();
+  }
+
+  void _clearMessages() {
+    _error = null;
+    _successMessage = null;
     notifyListeners();
   }
 }

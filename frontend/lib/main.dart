@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:riot_spotify_flutter/core/constants/app_constants.dart';
+import 'package:riot_spotify_flutter/features/home/viewmodel/home_viewmodel.dart';
 import 'package:riot_spotify_flutter/services/backend_service.dart';
-import 'package:riot_spotify_flutter/features/home_ref/view/home_screen.dart';
+import 'package:riot_spotify_flutter/features/home/view/home_screen.dart';
+import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,10 +27,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Riot Music',
-      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-      home: const HomeScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ConfigViewModel()),
+        ChangeNotifierProvider(
+          create: (context) => HomeViewModel(
+            context.read<ConfigViewModel>(), // Pega a instância criada acima
+          )..init(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Riot Music',
+        theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+        home: const HomeScreen(),
+      ),
     );
   }
 }
