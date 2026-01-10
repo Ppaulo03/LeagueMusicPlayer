@@ -80,7 +80,7 @@ backend/build/
 backend/dist/
 backend/config/config.json
 
-
+release_final/
 
 *.egg-info/
 .eggs/
