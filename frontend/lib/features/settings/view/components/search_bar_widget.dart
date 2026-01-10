@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
 
 /// Reusable search bar component for filtering lists
 class SearchBarWidget extends StatelessWidget {
@@ -17,7 +17,8 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ??
+      padding:
+          padding ??
           const EdgeInsets.symmetric(
             horizontal: SettingsConstants.searchBarHorizontalPadding,
             vertical: SettingsConstants.searchBarVerticalPadding,

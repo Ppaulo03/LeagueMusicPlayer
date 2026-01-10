@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/services/apis/music_player_api.dart';
+import 'package:league_music_player/services/apis/music_player_api.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class MusicPlayerViewModel extends ChangeNotifier {

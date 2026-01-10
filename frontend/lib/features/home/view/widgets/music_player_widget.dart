@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/features/home/viewmodel/music_player_viewmodel.dart';
+import 'package:league_music_player/features/home/viewmodel/music_player_viewmodel.dart';
 
 class MusicPlayerWidget extends StatefulWidget {
   final List<Color>? gradientColors;

@@ -1,8 +1,8 @@
-import 'package:riot_spotify_flutter/services/apis/api_service.dart';
+import 'package:league_music_player/services/apis/api_service.dart';
 import 'dart:convert';
-import 'package:riot_spotify_flutter/core/models/champion_config.dart';
-import 'package:riot_spotify_flutter/core/models/region_config.dart';
-import 'package:riot_spotify_flutter/core/models/config_model.dart';
+import 'package:league_music_player/core/models/champion_config.dart';
+import 'package:league_music_player/core/models/region_config.dart';
+import 'package:league_music_player/core/models/config_model.dart';
 
 class SettingsApi extends ApiService {
   late final String championUrl = 'champions';

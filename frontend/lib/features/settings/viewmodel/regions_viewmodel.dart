@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/region_config.dart';
-import 'package:riot_spotify_flutter/services/apis/settings_api.dart';
+import 'package:league_music_player/core/models/region_config.dart';
+import 'package:league_music_player/services/apis/settings_api.dart';
 
 /// ViewModel for managing region configurations
 class RegionConfigViewModel extends ChangeNotifier {
@@ -11,7 +11,7 @@ class RegionConfigViewModel extends ChangeNotifier {
   String? _error;
 
   RegionConfigViewModel({SettingsApi? apiService})
-      : _apiService = apiService ?? SettingsApi();
+    : _apiService = apiService ?? SettingsApi();
 
   // Getters
   List<RegionConfig> get regions => _regions;

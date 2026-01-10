@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:riot_spotify_flutter/core/constants/app_constants.dart';
+import 'package:league_music_player/core/constants/app_constants.dart';
 
 class ApiService {
   static const String _baseUrl = 'http://127.0.0.1';

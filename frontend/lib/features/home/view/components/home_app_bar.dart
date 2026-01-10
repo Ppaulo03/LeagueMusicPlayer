@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/features/home/core/constants/home_constants.dart';
-import 'package:riot_spotify_flutter/features/settings/view/settings_screen.dart'
+import 'package:league_music_player/features/home/core/constants/home_constants.dart';
+import 'package:league_music_player/features/settings/view/settings_screen.dart'
     as settings_ref;
-import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
+import 'package:league_music_player/features/settings/viewmodel/config_viewmodel.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Color> gradientColors;

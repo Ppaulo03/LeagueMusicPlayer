@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/champion_config.dart';
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/genre_multiselect.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/music_selector.dart';
+import 'package:league_music_player/core/models/champion_config.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/features/settings/view/components/genre_multiselect.dart';
+import 'package:league_music_player/features/settings/view/components/music_selector.dart';
 
 /// Configuration tile for individual champion settings
 class ChampionConfigTile extends StatefulWidget {
@@ -23,9 +23,7 @@ class _ChampionConfigTileState extends State<ChampionConfigTile> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(
-        bottom: SettingsConstants.cardBottomMargin,
-      ),
+      margin: const EdgeInsets.only(bottom: SettingsConstants.cardBottomMargin),
       child: Padding(
         padding: const EdgeInsets.all(SettingsConstants.cardPadding),
         child: Column(

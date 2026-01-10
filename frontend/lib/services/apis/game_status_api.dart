@@ -1,7 +1,7 @@
-import 'package:riot_spotify_flutter/services/apis/api_service.dart';
+import 'package:league_music_player/services/apis/api_service.dart';
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:riot_spotify_flutter/core/models/game_status.dart';
+import 'package:league_music_player/core/models/game_status.dart';
 
 class GameStatusApi extends ApiService {
   late final String url = 'game-status';

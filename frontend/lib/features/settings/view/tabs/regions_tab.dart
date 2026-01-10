@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/core/models/region_config.dart';
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/loading_indicator.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/search_bar_widget.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/empty_state_widget.dart';
-import 'package:riot_spotify_flutter/features/settings/view/config_tiles/region_config_tile.dart';
-import 'package:riot_spotify_flutter/features/settings/viewmodel/regions_viewmodel.dart';
+import 'package:league_music_player/core/models/region_config.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/features/settings/view/components/loading_indicator.dart';
+import 'package:league_music_player/features/settings/view/components/search_bar_widget.dart';
+import 'package:league_music_player/features/settings/view/components/empty_state_widget.dart';
+import 'package:league_music_player/features/settings/view/config_tiles/region_config_tile.dart';
+import 'package:league_music_player/features/settings/viewmodel/regions_viewmodel.dart';
 
 /// Regions configuration tab with search functionality
 class RegionsTab extends StatefulWidget {
@@ -30,9 +30,7 @@ class _RegionsTabState extends State<RegionsTab> {
     return Column(
       children: [
         _buildSearchBar(),
-        Expanded(
-          child: _buildRegionsList(viewModel),
-        ),
+        Expanded(child: _buildRegionsList(viewModel)),
       ],
     );
   }

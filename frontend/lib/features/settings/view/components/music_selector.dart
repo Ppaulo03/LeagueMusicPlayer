@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/champion_config.dart';
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
-import 'package:riot_spotify_flutter/services/apis/settings_api.dart';
+import 'package:league_music_player/core/models/champion_config.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/services/apis/settings_api.dart';
 
 /// Music selector widget with search and autocomplete functionality
 class MusicSelector extends StatefulWidget {
@@ -117,7 +117,7 @@ class _MusicSelectorState extends State<MusicSelector> {
 
     try {
       final results = await _apiService.getMusicData(query);
-      
+
       if (!mounted || !_focusNode.hasFocus) return;
 
       setState(() {
@@ -130,7 +130,7 @@ class _MusicSelectorState extends State<MusicSelector> {
       setState(() {
         _suggestions = [];
       });
-      
+
       debugPrint('Error searching music: $e');
     } finally {
       if (mounted && _focusNode.hasFocus) {
@@ -163,10 +163,7 @@ class _MusicSelectorState extends State<MusicSelector> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _buildTextField(),
-        if (_showDropdown) _buildDropdown(),
-      ],
+      children: [_buildTextField(), if (_showDropdown) _buildDropdown()],
     );
   }
 
@@ -205,10 +202,7 @@ class _MusicSelectorState extends State<MusicSelector> {
         border: Border.all(color: Colors.grey.shade300),
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
-          BoxShadow(
-            blurRadius: 5,
-            color: Colors.black.withValues(alpha: 0.1),
-          ),
+          BoxShadow(blurRadius: 5, color: Colors.black.withValues(alpha: 0.1)),
         ],
       ),
       child: ConstrainedBox(
@@ -225,10 +219,7 @@ class _MusicSelectorState extends State<MusicSelector> {
   }
 
   List<Widget> _buildDropdownItems() {
-    return [
-      _buildNoMusicOption(),
-      ..._suggestions.map(_buildMusicOption),
-    ];
+    return [_buildNoMusicOption(), ..._suggestions.map(_buildMusicOption)];
   }
 
   Widget _buildNoMusicOption() {

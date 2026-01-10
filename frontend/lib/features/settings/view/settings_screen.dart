@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/core/models/config_model.dart';
-import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
+import 'package:league_music_player/core/models/config_model.dart';
+import 'package:league_music_player/features/settings/viewmodel/config_viewmodel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -86,11 +86,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     vertical: 8,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.blue.withOpacity(
-                      0.05,
-                    ), // Fundo suave opcional
+                    color: Colors.blue.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.blue.withOpacity(0.2)),
+                    border: Border.all(
+                      color: Colors.blue.withValues(alpha: 0.2),
+                    ),
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/core/models/champion_config.dart';
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/loading_indicator.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/search_bar_widget.dart';
-import 'package:riot_spotify_flutter/features/settings/view/components/empty_state_widget.dart';
-import 'package:riot_spotify_flutter/features/settings/view/config_tiles/champion_config_tile.dart';
-import 'package:riot_spotify_flutter/features/settings/viewmodel/champions_viewmodel.dart';
+import 'package:league_music_player/core/models/champion_config.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/features/settings/view/components/loading_indicator.dart';
+import 'package:league_music_player/features/settings/view/components/search_bar_widget.dart';
+import 'package:league_music_player/features/settings/view/components/empty_state_widget.dart';
+import 'package:league_music_player/features/settings/view/config_tiles/champion_config_tile.dart';
+import 'package:league_music_player/features/settings/viewmodel/champions_viewmodel.dart';
 
 /// Champions configuration tab with search functionality
 class ChampionsTab extends StatefulWidget {
@@ -30,9 +30,7 @@ class _ChampionsTabState extends State<ChampionsTab> {
     return Column(
       children: [
         _buildSearchBar(),
-        Expanded(
-          child: _buildChampionsList(viewModel),
-        ),
+        Expanded(child: _buildChampionsList(viewModel)),
       ],
     );
   }

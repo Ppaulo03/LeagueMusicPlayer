@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/core/constants/app_constants.dart';
-import 'package:riot_spotify_flutter/features/home/viewmodel/home_viewmodel.dart';
-import 'package:riot_spotify_flutter/services/backend_service.dart';
-import 'package:riot_spotify_flutter/features/home/view/home_screen.dart';
-import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
+import 'package:league_music_player/core/constants/app_constants.dart';
+import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
+import 'package:league_music_player/services/backend_service.dart';
+import 'package:league_music_player/features/home/view/home_screen.dart';
+import 'package:league_music_player/features/settings/viewmodel/config_viewmodel.dart';
 
 Process? backendProcess;
 
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Riot Music',
+        title: 'League Music Player',
         theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
         home: const HomeScreen(),
       ),

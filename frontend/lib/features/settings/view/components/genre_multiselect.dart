@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:riot_spotify_flutter/features/settings/core/constants/settings_constants.dart';
+import 'package:league_music_player/features/settings/core/constants/settings_constants.dart';
 
 /// Multi-select widget for choosing music genres with autocomplete
 class GenreMultiSelect extends StatefulWidget {
@@ -61,7 +61,7 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
           .map((e) => e.trim())
           .where((e) => e.isNotEmpty)
           .toList();
-      
+
       if (mounted) {
         setState(() {});
       }
@@ -73,9 +73,11 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
   void _updateSuggestions(String input) {
     final lowerInput = input.toLowerCase();
     _suggestions = _allGenres
-        .where((genre) =>
-            genre.toLowerCase().contains(lowerInput) &&
-            !widget.selectedGenres.contains(genre))
+        .where(
+          (genre) =>
+              genre.toLowerCase().contains(lowerInput) &&
+              !widget.selectedGenres.contains(genre),
+        )
         .take(SettingsConstants.maxSuggestions)
         .toList();
     _overlayEntry?.markNeedsBuild();
@@ -91,7 +93,7 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
     _controller.clear();
     _updateSuggestions('');
     _focusNode.requestFocus();
-    
+
     if (mounted) {
       setState(() {});
     }
@@ -101,7 +103,7 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
     widget.selectedGenres.remove(genre);
     widget.onChanged(widget.selectedGenres);
     _updateSuggestions(_controller.text);
-    
+
     if (mounted) {
       setState(() {});
     }
@@ -110,7 +112,8 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
   void _showOverlay() {
     if (_overlayEntry != null) return;
 
-    final renderBox = _textFieldKey.currentContext?.findRenderObject() as RenderBox?;
+    final renderBox =
+        _textFieldKey.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
 
     final size = renderBox.size;
@@ -176,10 +179,7 @@ class _GenreMultiSelectState extends State<GenreMultiSelect> {
           spacing: SettingsConstants.genreChipSpacing,
           runSpacing: SettingsConstants.genreChipSpacing,
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            ..._buildGenreChips(),
-            _buildTextField(context),
-          ],
+          children: [..._buildGenreChips(), _buildTextField(context)],
         ),
       ],
     );

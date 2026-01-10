@@ -1,4 +1,4 @@
-package com.example.riot_spotify_flutter
+package com.example.league_music_player
 
 import io.flutter.embedding.android.FlutterActivity
 

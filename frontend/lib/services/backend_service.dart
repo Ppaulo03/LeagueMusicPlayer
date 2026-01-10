@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:http/http.dart' as http;
-import 'package:riot_spotify_flutter/core/constants/app_constants.dart';
-import 'package:riot_spotify_flutter/core/models/config_model.dart';
+import 'package:league_music_player/core/constants/app_constants.dart';
+import 'package:league_music_player/core/models/config_model.dart';
 
 final tempDir = Directory.systemTemp.path;
 final portFile = File('$tempDir/backend_port.json');

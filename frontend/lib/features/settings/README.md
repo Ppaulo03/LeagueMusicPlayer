@@ -72,7 +72,7 @@ To migrate from the original settings to the refactored version:
 
 1. Update imports in your routing file:
    ```dart
-   import 'package:riot_spotify_flutter/features/settings/view/settings_screen.dart';
+   import 'package:league_music_player/features/settings/view/settings_screen.dart';
    ```
 
 2. The API remains the same, so no changes needed in service layer

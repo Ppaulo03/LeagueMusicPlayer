@@ -1,4 +1,4 @@
-import 'package:riot_spotify_flutter/services/apis/api_service.dart';
+import 'package:league_music_player/services/apis/api_service.dart';
 
 class MusicPlayerApi extends ApiService {
   late final String url = 'player';

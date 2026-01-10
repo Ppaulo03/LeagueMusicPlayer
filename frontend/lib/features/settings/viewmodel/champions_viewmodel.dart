@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/champion_config.dart';
-import 'package:riot_spotify_flutter/services/apis/settings_api.dart';
+import 'package:league_music_player/core/models/champion_config.dart';
+import 'package:league_music_player/services/apis/settings_api.dart';
 
 /// ViewModel for managing champion configurations
 class ChampionConfigViewModel extends ChangeNotifier {
@@ -11,7 +11,7 @@ class ChampionConfigViewModel extends ChangeNotifier {
   String? _error;
 
   ChampionConfigViewModel({SettingsApi? apiService})
-      : _apiService = apiService ?? SettingsApi();
+    : _apiService = apiService ?? SettingsApi();
 
   // Getters
   List<ChampionConfig> get champions => _champions;

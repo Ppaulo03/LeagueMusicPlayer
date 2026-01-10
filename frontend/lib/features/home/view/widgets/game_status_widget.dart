@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/game_status.dart';
+import 'package:league_music_player/core/models/game_status.dart';
 
 class GameStatusWidget extends StatefulWidget {
   final GameStatus? gameStatus;

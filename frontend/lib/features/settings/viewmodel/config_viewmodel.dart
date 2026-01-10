@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riot_spotify_flutter/core/models/config_model.dart';
-import 'package:riot_spotify_flutter/services/apis/settings_api.dart';
+import 'package:league_music_player/core/models/config_model.dart';
+import 'package:league_music_player/services/apis/settings_api.dart';
 
 class ConfigViewModel extends ChangeNotifier {
   final SettingsApi _apiService;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/features/home/view/widgets/game_status_widget.dart';
-import 'package:riot_spotify_flutter/features/home/viewmodel/home_viewmodel.dart';
+import 'package:league_music_player/features/home/view/widgets/game_status_widget.dart';
+import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
 
 class GameStatusSection extends StatelessWidget {
   final List<Color> gradientColors;

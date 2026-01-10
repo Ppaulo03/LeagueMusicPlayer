@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:riot_spotify_flutter/features/home/core/constants/home_constants.dart';
-import 'package:riot_spotify_flutter/features/home/view/components/gradient_background.dart';
-import 'package:riot_spotify_flutter/features/home/view/components/home_app_bar.dart';
-import 'package:riot_spotify_flutter/features/home/view/sections/game_status_section.dart';
-import 'package:riot_spotify_flutter/features/home/view/sections/music_player_section.dart';
-import 'package:riot_spotify_flutter/features/home/viewmodel/home_viewmodel.dart';
-import 'package:riot_spotify_flutter/features/settings/view/settings_screen.dart';
+import 'package:league_music_player/features/home/core/constants/home_constants.dart';
+import 'package:league_music_player/features/home/view/components/gradient_background.dart';
+import 'package:league_music_player/features/home/view/components/home_app_bar.dart';
+import 'package:league_music_player/features/home/view/sections/game_status_section.dart';
+import 'package:league_music_player/features/home/view/sections/music_player_section.dart';
+import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
+import 'package:league_music_player/features/settings/view/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

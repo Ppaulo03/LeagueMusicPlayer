@@ -1,3 +1,3 @@
-# riot_spotify_flutter
+# league_music_player
 
 A new Flutter project.
