@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:riot_spotify_flutter/core/models/config_model.dart';
 import 'package:riot_spotify_flutter/features/settings/viewmodel/config_viewmodel.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -76,6 +78,76 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     border: OutlineInputBorder(),
                   ),
                   obscureText: true, // Hide API key
+                ),
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 4,
+                    vertical: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(
+                      0.05,
+                    ), // Fundo suave opcional
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.blue.withOpacity(0.2)),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.info_outline,
+                        size: 20,
+                        color: Colors.blue,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              color: Colors.grey[800],
+                              fontSize: 13,
+                            ),
+                            children: [
+                              const TextSpan(
+                                text:
+                                    'Obtenha sua chave API no site do Groq:\n',
+                              ),
+                              TextSpan(
+                                text: 'https://console.groq.com/',
+                                style: const TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline,
+                                ),
+                                // Torna o link clicável
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () async {
+                                    final Uri url = Uri.parse(
+                                      'https://console.groq.com/',
+                                    );
+                                    if (!await launchUrl(url)) {
+                                      // Opcional: Mostrar erro se não conseguir abrir
+                                      if (context.mounted) {
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
+                                          const SnackBar(
+                                            content: Text(
+                                              'Não foi possível abrir o link',
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                    }
+                                  },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(

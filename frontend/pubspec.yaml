@@ -16,6 +16,7 @@ dependencies:
   audioplayers: ^6.5.1
   flutter_chips_input: ^2.0.0
   chips_choice: ^3.0.1
+  url_launcher: ^6.2.0
   
 dev_dependencies:
   flutter_test:
