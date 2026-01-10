@@ -1,6 +1,6 @@
 # 🎵 League Music Player
 
-![Badge License](https://img.shields.io/github/license/Ppaulo03/LeagueMusicPlayer?style=flat-square)
+![Badge License](https://img.shields.io/github/license/Ppaulo03/LeagueMusicPlayer?style=flat-square&v=1)
 ![Badge Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue?style=flat-square&logo=flutter)
 ![Badge Python](https://img.shields.io/badge/Python-3.8%2B-yellow?style=flat-square&logo=python)
 ![Badge Platform](https://img.shields.io/badge/Plataforma-Windows_10%2F11-0078D6?style=flat-square&logo=windows)
@@ -136,7 +136,7 @@ Para criar o instalador ou o arquivo `.zip` final para distribuição (Windows),
 Na raiz do projeto, execute:
 
 ```bash
-python build_installer.py
+python build.py
 
 ```
 
