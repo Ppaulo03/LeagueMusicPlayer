@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'dart:math';
+import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:league_music_player/features/home/viewmodel/music_player_viewmodel.dart';
 
@@ -16,14 +17,14 @@ class _MusicPlayerWidgetState extends State<MusicPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // Definindo as cores padrão caso venham nulas
+    final defaultColors = [const Color(0xFF1F1C2C), const Color(0xFF928DAB)];
+    final currentColors = widget.gradientColors ?? defaultColors;
+
     return ChangeNotifierProvider(
       create: (_) => MusicPlayerViewModel(),
       child: Consumer<MusicPlayerViewModel>(
         builder: (context, vm, _) {
-          final colors =
-              widget.gradientColors ??
-              [const Color(0xFF1F1C2C), const Color(0xFF928DAB)];
-
           return MouseRegion(
             onEnter: (_) => setState(() => _hovering = true),
             onExit: (_) => setState(() => _hovering = false),
@@ -32,8 +33,8 @@ class _MusicPlayerWidgetState extends State<MusicPlayerWidget> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    colors.first.withValues(alpha: 0.9),
-                    colors.last.withValues(alpha: 0.9),
+                    currentColors.first.withValues(alpha: 0.9),
+                    currentColors.last.withValues(alpha: 0.9),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -51,52 +52,62 @@ class _MusicPlayerWidgetState extends State<MusicPlayerWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SliderTheme(
-                    data: SliderTheme.of(context).copyWith(
-                      trackHeight: 3,
-                      thumbShape: const RoundSliderThumbShape(
-                        enabledThumbRadius: 6,
+                  // -----------------------------------------------------------
+                  // BARRA DE PROGRESSO (SLIDER)
+                  // -----------------------------------------------------------
+                  Slider(
+                    value: vm.position.inSeconds.toDouble(),
+                    max: max(1.0, vm.duration.inSeconds.toDouble()),
+                    onChanged: (v) {
+                      vm.seek(Duration(seconds: v.toInt()));
+                    },
+                    style: SliderThemeData(
+                      activeColor: WidgetStateProperty.all(Colors.white),
+                      inactiveColor: WidgetStateProperty.all(
+                        Colors.white.withValues(alpha: 0.2),
                       ),
-                    ),
-                    child: Slider(
-                      value: vm.position.inSeconds.toDouble(),
-                      max: vm.duration.inSeconds.toDouble().clamp(
-                        1,
-                        double.infinity,
-                      ),
-                      onChanged: (v) {
-                        vm.seek(Duration(seconds: v.toInt()));
-                      },
-                      activeColor: Colors.white,
-                      inactiveColor: Colors.white24,
+                      thumbColor: WidgetStateProperty.all(Colors.white),
+                      margin: const EdgeInsets.symmetric(horizontal: 0),
                     ),
                   ),
 
+                  const SizedBox(height: 4),
+
+                  // -----------------------------------------------------------
+                  // TIMESTAMPS
+                  // -----------------------------------------------------------
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "${vm.position.inMinutes}:${(vm.position.inSeconds % 60).toString().padLeft(2, '0')}",
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.white,
                           fontSize: 12,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
                       Text(
                         "${vm.duration.inMinutes}:${(vm.duration.inSeconds % 60).toString().padLeft(2, '0')}",
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.white,
                           fontSize: 12,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
                     ],
                   ),
 
+                  const SizedBox(height: 8),
+
+                  // -----------------------------------------------------------
+                  // LINHA DE CONTROLES INFERIOR
+                  // -----------------------------------------------------------
                   Row(
-                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.4,
+                      // PARTE ESQUERDA: Loading ou Título da Música
+                      Expanded(
+                        flex: 4,
                         child: AnimatedSwitcher(
                           duration: const Duration(milliseconds: 500),
                           child: vm.isLoading
@@ -104,11 +115,11 @@ class _MusicPlayerWidgetState extends State<MusicPlayerWidget> {
                                   key: const ValueKey('loading'),
                                   children: [
                                     const SizedBox(
-                                      height: 18,
-                                      width: 18,
-                                      child: CircularProgressIndicator(
+                                      height: 16,
+                                      width: 16,
+                                      child: ProgressRing(
                                         strokeWidth: 2,
-                                        color: Colors.white70,
+                                        activeColor: Colors.white,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
@@ -123,94 +134,110 @@ class _MusicPlayerWidgetState extends State<MusicPlayerWidget> {
                                     ),
                                   ],
                                 )
-                              : Text(
-                                  vm.currentFilename ?? 'Nenhuma música',
-                                  key: ValueKey(vm.currentFilename ?? 'none'),
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
+                              : Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    vm.currentFilename ??
+                                        'Aguardando seleção...',
+                                    key: ValueKey(vm.currentFilename ?? 'none'),
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                         ),
                       ),
-                      const SizedBox(width: 12),
 
+                      // PARTE CENTRAL: Botões de Play/Pause
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: const Icon(Icons.skip_previous),
-                            color: Colors.white,
-                            iconSize: 28,
+                            icon: const Icon(
+                              FluentIcons.previous,
+                              color: Colors.white,
+                            ),
                             onPressed: vm.isLoading
                                 ? null
                                 : () => vm.previousTrack(),
                           ),
+                          const SizedBox(width: 8),
                           Container(
+                            height: 40,
+                            width: 40,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.white.withValues(alpha: 0.25),
+                              color: Colors.white.withValues(alpha: 0.2),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.1),
+                              ),
                             ),
                             child: IconButton(
                               icon: Icon(
-                                vm.isPlaying ? Icons.pause : Icons.play_arrow,
+                                vm.isPlaying
+                                    ? FluentIcons.pause
+                                    : FluentIcons.play,
                                 color: Colors.white,
-                                size: 32,
+                                size: 18,
                               ),
                               onPressed: vm.isLoading
                                   ? null
                                   : () => vm.togglePlayPause(),
                             ),
                           ),
+                          const SizedBox(width: 8),
                           IconButton(
-                            icon: const Icon(Icons.skip_next),
-                            color: Colors.white,
-                            iconSize: 28,
+                            icon: const Icon(
+                              FluentIcons.next,
+                              color: Colors.white,
+                            ),
                             onPressed: vm.isLoading
                                 ? null
                                 : () => vm.nextTrack(),
                           ),
                         ],
                       ),
-
-                      const SizedBox(width: 12),
-
-                      // 🎚 Controle de volume com hover
+                      const SizedBox(width: 16),
+                      // PARTE DIREITA: Volume
                       Expanded(
+                        flex: 4,
                         child: AnimatedOpacity(
                           opacity: _hovering ? 1 : 0,
                           duration: const Duration(milliseconds: 300),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               GestureDetector(
                                 onTap: () => vm.toggleMute(),
                                 child: Icon(
                                   vm.volume == 0
-                                      ? Icons.volume_off
+                                      ? FluentIcons.volume0
                                       : vm.volume < 0.5
-                                      ? Icons.volume_down
-                                      : Icons.volume_up,
-                                  color: Colors.white70,
-                                  size: 22,
+                                      ? FluentIcons.volume1
+                                      : FluentIcons.volume3,
+                                  color: Colors.white.withValues(alpha: 0.8),
+                                  size: 18,
                                 ),
                               ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: SliderTheme(
-                                  data: SliderTheme.of(context).copyWith(
-                                    trackHeight: 3,
-                                    thumbShape: const RoundSliderThumbShape(
-                                      enabledThumbRadius: 6,
+                              Flexible(
+                                child: Slider(
+                                  value: vm.volume,
+                                  onChanged: (v) => vm.setVolume(v),
+                                  max: 1.0,
+                                  style: SliderThemeData(
+                                    thumbColor: WidgetStateProperty.all(
+                                      Colors.white,
                                     ),
-                                  ),
-                                  child: Slider(
-                                    value: vm.volume,
-                                    onChanged: (v) => vm.setVolume(v),
-                                    min: 0,
-                                    max: 1,
-                                    activeColor: Colors.white,
-                                    inactiveColor: Colors.white24,
+                                    activeColor: WidgetStateProperty.all(
+                                      Colors.white,
+                                    ),
+                                    inactiveColor: WidgetStateProperty.all(
+                                      Colors.white.withValues(alpha: 0.2),
+                                    ),
+                                    margin: const EdgeInsets.all(0),
                                   ),
                                 ),
                               ),

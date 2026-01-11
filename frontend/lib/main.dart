@@ -1,17 +1,44 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart';
+import 'package:window_manager/window_manager.dart';
+import 'package:flutter_acrylic/flutter_acrylic.dart';
+import 'package:provider/provider.dart';
+
 import 'package:league_music_player/bootsrap.dart';
 import 'package:league_music_player/core/logging.dart';
-import 'package:provider/provider.dart';
 import 'package:league_music_player/features/home/viewmodel/home_viewmodel.dart';
 import 'package:league_music_player/features/home/view/home_screen.dart';
 import 'package:league_music_player/features/settings/viewmodel/config_viewmodel.dart';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 Process? backendProcess;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await setupLogFile();
+  await Window.initialize();
+  await Window.setEffect(effect: WindowEffect.mica, dark: true);
+
+  await windowManager.ensureInitialized();
+
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(1280, 720),
+    minimumSize: Size(800, 600),
+    center: true,
+    titleBarStyle: TitleBarStyle.hidden,
+    backgroundColor: Colors.transparent,
+    skipTaskbar: false,
+  );
+
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+  });
+  doWhenWindowReady(() {
+    appWindow.minSize = const Size(800, 600); // Força o limite no bitsdojo
+    appWindow.alignment = Alignment.center;
+  });
   runApp(const AppBootstrap());
 }
 
@@ -48,7 +75,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     if (backendProcess != null) {
       debugPrint("Matando o processo do backend...");
       backendProcess!.kill();
-      backendProcess = null; // Limpa a referência
+      backendProcess = null;
     }
   }
 
@@ -62,11 +89,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               HomeViewModel(context.read<ConfigViewModel>())..init(),
         ),
       ],
-      child: MaterialApp(
-        title: 'League Music Player',
-        theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-        home: const HomeScreen(),
-      ),
+      child: const HomeScreen(),
     );
   }
 }

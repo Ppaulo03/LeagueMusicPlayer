@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart'; // Troca o material pelo fluent_ui
 import 'package:provider/provider.dart';
+
 import 'package:league_music_player/features/home/core/constants/home_constants.dart';
 import 'package:league_music_player/features/home/view/components/gradient_background.dart';
 import 'package:league_music_player/features/home/view/components/home_app_bar.dart';
@@ -17,28 +18,35 @@ class HomeScreen extends StatelessWidget {
       builder: (context, vm, _) {
         final colors = vm.championSplashGradient;
         final gradientColors = (colors != null && colors.isNotEmpty)
-            ? colors.take(2).toList()
+            ? colors.take(3).toList()
             : HomeConstants.defaultGradient;
 
-        return Scaffold(
-          extendBodyBehindAppBar: true,
-          appBar: HomeAppBar(gradientColors: gradientColors),
-          body: GradientBackground(
-            colors: gradientColors,
-            child: SafeArea(
-              child: Padding(
-                padding: HomeConstants.screenPadding,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    if (vm.isApiKeyMissing) _buildApiKeyWarning(context),
-                    const SizedBox(height: 24),
-                    GameStatusSection(gradientColors: gradientColors),
-                    HomeConstants.sectionSpacing,
-                    const Spacer(),
-                    MusicPlayerSection(gradientColors: gradientColors),
-                  ],
-                ),
+        return GradientBackground(
+          colors: gradientColors,
+          child: ScaffoldPage(
+            padding: EdgeInsets.zero,
+            header: Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: HomeAppBar(gradientColors: gradientColors),
+            ),
+
+            content: Padding(
+              padding: HomeConstants.screenPadding,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  if (vm.isApiKeyMissing)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 24.0),
+                      child: _buildApiKeyInfoBar(context),
+                    ),
+
+                  GameStatusSection(gradientColors: gradientColors),
+                  HomeConstants.sectionSpacing,
+                  const Spacer(),
+                  MusicPlayerSection(gradientColors: gradientColors),
+                  const SizedBox(height: 20),
+                ],
               ),
             ),
           ),
@@ -47,36 +55,22 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildApiKeyWarning(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.orange.shade100,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.orange.shade300),
+  Widget _buildApiKeyInfoBar(BuildContext context) {
+    return InfoBar(
+      title: const Text('Configuração Necessária'),
+      content: const Text('Sua chave API não está configurada.'),
+      severity: InfoBarSeverity.warning,
+      isLong: true,
+      action: Button(
+        child: const Text('Configurar'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            FluentPageRoute(builder: (_) => const SettingsScreen()),
+          );
+        },
       ),
-      child: Row(
-        children: [
-          Icon(Icons.warning, color: Colors.orange.shade800),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              'Chave API não configurada. Vá para as configurações para adicionar sua chave API.',
-              style: TextStyle(color: Colors.orange.shade800),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const SettingsScreen()),
-              );
-            },
-            child: const Text('Configurar'),
-          ),
-        ],
-      ),
+      onClose: () {},
     );
   }
 }

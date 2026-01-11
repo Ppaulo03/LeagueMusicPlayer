@@ -90,6 +90,7 @@ def test_config(config: Dict[str, Any]):
         )
     except Exception as e:
         error_msg = str(e).lower()
+        logger.error(f"Config test error message: {error_msg}")
         if "model" in error_msg and (
             "not found" in error_msg or "invalid" in error_msg
         ):

@@ -11,8 +11,8 @@ class MusicPlayerViewModel extends ChangeNotifier {
   String? _currentFilename;
   bool _isLoading = false;
   bool _isPlaying = false;
-  double _volume = 0.6;
-  double _lastVolume = 0.6;
+  double _volume = 0.3;
+  double _lastVolume = 0.3;
 
   Duration _position = Duration.zero;
   Duration _duration = Duration(minutes: 3);

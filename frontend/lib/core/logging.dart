@@ -28,8 +28,6 @@ Future<void> setupLogFile() async {
       "\n--- INÍCIO DO LOG (${DateTime.now()}) ---\n",
       mode: FileMode.append,
     );
-
-    debugPrint("Log definido em: ${_logFile!.path}");
   } catch (e) {
     debugPrint("Erro crítico ao criar log: $e");
   }

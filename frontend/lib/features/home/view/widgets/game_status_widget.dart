@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:flutter/material.dart';
+import 'dart:ui'; // Necessário para FontFeature
+import 'package:fluent_ui/fluent_ui.dart';
 import 'package:league_music_player/core/models/game_status.dart';
 
 class GameStatusWidget extends StatefulWidget {
@@ -32,8 +33,6 @@ class _GameStatusWidgetState extends State<GameStatusWidget> {
   @override
   void didUpdateWidget(GameStatusWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-
-    // Atualiza contador quando o ViewModel envia novo estado
     if (widget.gameStatus?.gameTime != oldWidget.gameStatus?.gameTime ||
         widget.gameStatus?.isPlaying != oldWidget.gameStatus?.isPlaying) {
       _syncWithGameStatus();
@@ -48,7 +47,9 @@ class _GameStatusWidgetState extends State<GameStatusWidget> {
     _elapsedSeconds =
         double.tryParse(widget.gameStatus!.gameTime)?.floor() ?? 0;
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      setState(() => _elapsedSeconds++);
+      if (mounted) {
+        setState(() => _elapsedSeconds++);
+      }
     });
   }
 
@@ -70,38 +71,46 @@ class _GameStatusWidgetState extends State<GameStatusWidget> {
   @override
   Widget build(BuildContext context) {
     final gameStatus = widget.gameStatus;
+    final typography = FluentTheme.of(context).typography;
 
+    // Pegamos o tamanho total da tela para calcular o espaço disponível
+    final screenSize = MediaQuery.of(context).size;
+
+    // ESTADO: NÃO JOGANDO (IDLE)
     if (gameStatus == null || !gameStatus.isPlaying) {
       return Card(
-        color: Colors.white.withValues(alpha: 0.1),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        elevation: 8,
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              CircularProgressIndicator(color: Colors.white),
-              SizedBox(width: 16),
-              Text(
-                'Não está jogando no momento',
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-            ],
-          ),
+        backgroundColor: Colors.black.withValues(
+          alpha: 0.3,
+        ), // Fundo escuro translúcido
+        borderRadius: BorderRadius.circular(8),
+        padding: const EdgeInsets.all(24.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 20,
+              width: 20,
+              child: ProgressRing(strokeWidth: 2.5, activeColor: Colors.white),
+            ),
+            const SizedBox(width: 16),
+            Text(
+              'Aguardando partida...',
+              style: typography.body?.copyWith(color: Colors.white),
+            ),
+          ],
         ),
       );
     }
 
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      elevation: 12,
+      padding: EdgeInsets.zero,
+      borderRadius: BorderRadius.circular(8),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(8),
           gradient: LinearGradient(
             colors: widget.gradientColors
-                .map((c) => c.withValues(alpha: 0.3))
+                .map((c) => c.withValues(alpha: 0.4))
                 .toList(),
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -111,42 +120,121 @@ class _GameStatusWidgetState extends State<GameStatusWidget> {
         child: Column(
           children: [
             if (widget.championSplash != null)
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.memory(
-                  widget.championSplash!,
-                  height: 180,
-                  fit: BoxFit.cover,
-                ),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  // 1. LÓGICA DE LARGURA (Responsividade Horizontal)
+                  double targetWidth;
+                  if (constraints.maxWidth > 800) {
+                    targetWidth = constraints.maxWidth * 0.5;
+                  } else if (constraints.maxWidth > 500) {
+                    targetWidth = constraints.maxWidth * 0.8;
+                  } else {
+                    targetWidth = constraints.maxWidth;
+                  }
+
+                  double maxAllowedHeight = screenSize.height - 450;
+
+                  // Segurança: Nunca deixa ser menor que 150px
+                  if (maxAllowedHeight < 150) maxAllowedHeight = 150;
+
+                  return Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      width: targetWidth,
+
+                      // Limita a altura para evitar overflow se a janela for pequena
+                      constraints: BoxConstraints(maxHeight: maxAllowedHeight),
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: ShaderMask(
+                          shaderCallback: (rect) {
+                            return const LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Colors.black, Colors.transparent],
+                              stops: [0.8, 1.0],
+                            ).createShader(
+                              Rect.fromLTRB(0, 0, rect.width, rect.height),
+                            );
+                          },
+                          blendMode: BlendMode.dstIn,
+                          child: Image.memory(
+                            widget.championSplash!,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+
+                            frameBuilder:
+                                (
+                                  context,
+                                  child,
+                                  frame,
+                                  wasSynchronouslyLoaded,
+                                ) {
+                                  if (wasSynchronouslyLoaded) return child;
+                                  return AnimatedOpacity(
+                                    opacity: frame == null ? 0 : 1,
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeOut,
+                                    child: child,
+                                  );
+                                },
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
-            const SizedBox(height: 16),
+
             Text(
               'Jogando: ${gameStatus.champion}',
-              style: TextStyle(
-                color: widget.gradientColors.first,
-                fontSize: 22,
+              style: typography.title?.copyWith(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+
+            const SizedBox(height: 4),
+
+            // Modo de Jogo
             Text(
               'Modo: ${gameStatus.gameMode}',
-              style: TextStyle(
-                color: widget.gradientColors.last.withValues(alpha: 0.8),
-                fontSize: 16,
+              style: typography.body?.copyWith(
+                color: Colors.white.withValues(alpha: 0.9),
               ),
             ),
+
             const SizedBox(height: 8),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              transitionBuilder: (child, anim) =>
-                  FadeTransition(opacity: anim, child: child),
-              child: Text(
-                'Tempo de jogo: ${_formatGameTime(_elapsedSeconds)}',
-                key: ValueKey(_elapsedSeconds),
-                style: TextStyle(
-                  color: widget.gradientColors.last.withValues(alpha: 0.8),
-                  fontSize: 16,
+
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (child, anim) =>
+                    FadeTransition(opacity: anim, child: child),
+                child: Text(
+                  _formatGameTime(_elapsedSeconds),
+                  key: ValueKey(_elapsedSeconds),
+                  style: typography.bodyStrong?.copyWith(
+                    color: Colors.white,
+                    fontFeatures: [const FontFeature.tabularFigures()],
+                  ),
                 ),
               ),
             ),
