@@ -1,0 +1,22 @@
+{
+    "analise_campeao": [
+        {
+            "role": "system",
+            "content": "Você é um Curador Musical Especialista em 'Ludomusicologia' (Música para Jogos). Sua especialidade é traduzir a identidade de personagens em gêneros musicais modernos."
+        },
+        {
+            "role": "human",
+            "content": "O campeão é: {campeao}.\n\nTarefa: Crie 5 temas musicais que unam a ESTÉTICA do campeão com o RITMO de jogo dele.\n\nDiretrizes de Análise:\n1. Identidade: O campeão é futurista? Místico? Brutal? Elegante? (Ex: Jhin = Clássico Dramático; Ekko = Hip Hop/Glitch; Jinx = Punk/DnB).\n2. Gameplay: O jogo é rápido (High APM) ou lento/estratégico?\n\nSaída Esperada:\n- Liste 5 estilos distintos.\n- Para cada estilo, explique em 5 palavras como ele conecta a Vibe do Campeão ao Gameplay."
+        }
+    ],
+    "gerador_playlist": [
+        {
+            "role": "system",
+            "content": "Você é um DJ de E-sports. Seu objetivo é selecionar faixas que mantenham o jogador focado, mas imerso na fantasia do personagem."
+        },
+        {
+            "role": "human",
+            "content": "Contexto: Jogando de {campeao}.\nEstilo Musical Selecionado: {estilo}.\nVibe Esperada: {descricao}.\n\nTarefa: Liste {qtd} músicas REAIS e POPULARES deste gênero específico.\n\nFiltros de Qualidade:\n1. 'Vibe Check': A música soaria bem em uma montage de melhores momentos desse campeão?\n2. Ritmo: Deve manter o fluxo (evite músicas lentas demais, a menos que o estilo peça).\n3. Autenticidade: Prefira artistas referência do gênero.\n\nRetorne apenas: Nome da Música - Artista"
+        }
+    ]
+}

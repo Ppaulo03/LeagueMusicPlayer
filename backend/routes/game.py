@@ -17,29 +17,6 @@ game_status_service = GameStatusService()
 
 @router.get("", summary="Get current game status")
 async def get_game_status() -> JSONResponse:
-    """
-    Retrieve the current League of Legends game status.
-
-    Returns:
-        JSONResponse: Current game state information including:
-            - Active champion
-            - Game mode
-            - Game time
-            - Player info
-
-    Example:
-        ```json
-        {
-            "champion": "Ahri",
-            "championId": 103,
-            "gameMode": "CLASSIC",
-            "gameTime": 1234
-        }
-        ```
-
-    Raises:
-        HTTPException: 404 if no active game, 500 if status check fails
-    """
     try:
         status = game_status_service.get_status()
 
@@ -56,16 +33,6 @@ async def get_game_status() -> JSONResponse:
 
 @router.get("/splash", summary="Get champion splash art")
 async def get_champion_splash() -> StreamingResponse:
-    """
-    Retrieve the splash art for the currently active champion.
-
-    Returns:
-        StreamingResponse: JPEG image of champion splash art
-        Response: Empty 404 response if no splash art available
-
-    Raises:
-        HTTPException: 500 if splash art retrieval fails
-    """
     try:
         splash_stream = game_status_service.get_splash_art()
 

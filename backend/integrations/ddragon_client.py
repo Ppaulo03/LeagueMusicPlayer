@@ -150,6 +150,7 @@ class DataDragonClient:
                 f"{self.base_url}/cdn/img/champion/splash/"
                 f"{champion_id}_{skin_number}.jpg"
             )
+            logger.info(f"Fetching splash art from URL: {url}")
             response = requests.get(url, timeout=10)
             response.raise_for_status()
 

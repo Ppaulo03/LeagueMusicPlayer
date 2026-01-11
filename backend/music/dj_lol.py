@@ -1,7 +1,6 @@
 import time
 import json
 import os
-from pathlib import Path
 from typing import List
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
@@ -37,6 +36,8 @@ class ListaMusicas(BaseModel):
 
 
 # --- Configuração ---
+
+
 def get_llm():
     config_path = BASE_DIR / "config.json"
     with open(config_path, "r") as f:
@@ -47,6 +48,23 @@ def get_llm():
     return ChatGroq(model=model, temperature=0.7)
 
 
+def carregar_prompt(nome_chave: str, arquivo="prompts.json"):
+    """Lê o prompt do JSON e converte para ChatPromptTemplate"""
+    arquivo = os.path.join(BASE_DIR, arquivo)
+    if not os.path.exists(arquivo):
+        raise FileNotFoundError(f"Arquivo {arquivo} não encontrado.")
+
+    with open(arquivo, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if nome_chave not in data:
+        raise KeyError(f"Chave '{nome_chave}' não encontrada no JSON.")
+
+    # Converte lista de dicts para lista de tuplas [(role, content), ...]
+    mensagens = [(msg["role"], msg["content"]) for msg in data[nome_chave]]
+    return ChatPromptTemplate.from_messages(mensagens)
+
+
 # --- Funções do Agente ---
 
 
@@ -55,36 +73,18 @@ def gerar_temas(campeao: str) -> List[TemaMusical]:
     logger.info(f"🧠 Analisando a personalidade de {campeao}...")
 
     llm = get_llm()
-    chain = ChatPromptTemplate.from_template(
-        "Você é um curador musical. Liste 5 estilos musicais ou 'vibes' distintos "
-        "que combinam perfeitamente com o campeão de LoL: {campeao}. "
-        "Varie bem os estilos (ex: não mande 5 tipos de rock)."
-    ) | llm.with_structured_output(ListaTemas)
-
+    prompt = carregar_prompt("analise_campeao")
+    chain = prompt | llm.with_structured_output(ListaTemas)
     resultado = chain.invoke({"campeao": campeao})
     return resultado.temas
 
 
 def gerar_musicas_por_tema(campeao: str, tema: TemaMusical, qtd: int) -> List[str]:
     """Estágio 2: Preenche a playlist baseada no tema"""
-    logger.info(f"   ↳ Gerando {qtd} faixas do estilo: {tema.estilo}...")
+    logger.info(f"Gerando {qtd} faixas do estilo: {tema.estilo} - {tema.descricao}...")
 
     llm = get_llm()
-    prompt = ChatPromptTemplate.from_messages(
-        [
-            (
-                "system",
-                "Você é um DJ especialista. Gere queries de busca precisas para o Youtube.",
-            ),
-            (
-                "human",
-                "O campeão é {campeao}. O foco agora é o estilo: {estilo} ({descricao}).\n"
-                "Liste {qtd} músicas REAIS e EXISTENTES desse gênero exato.\n"
-                "Retorne apenas Nome da Música + Artista.",
-            ),
-        ]
-    )
-
+    prompt = carregar_prompt("gerador_playlist")
     chain = prompt | llm.with_structured_output(ListaMusicas)
 
     try:
@@ -98,7 +98,7 @@ def gerar_musicas_por_tema(campeao: str, tema: TemaMusical, qtd: int) -> List[st
         )
         return [m.search_query for m in resultado.musicas]
     except Exception as e:
-        logger.info(f"   ⚠️ Erro ao gerar para {tema.estilo}: {e}")
+        logger.info(f"Erro ao gerar para {tema.estilo}: {e}")
         return []
 
 
@@ -111,9 +111,10 @@ def gerar_playlist(campeao: str, total_alvo: int = 100):
 
         # 1. Pega 5 temas (Ex: Yasuo -> Hip Hop, Flauta Japonesa, Epic Rock, etc)
         temas = gerar_temas(campeao)
-        print(total_alvo, len(temas))
+        for t in temas:
+            logger.info(f"Tema gerado: {t.estilo} - {t.descricao}")
         musicas_por_tema = total_alvo // len(temas)
-        print(musicas_por_tema)
+
         # 2. Loop para preencher
         for tema in temas:
             queries = gerar_musicas_por_tema(campeao, tema, musicas_por_tema)

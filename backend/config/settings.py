@@ -19,7 +19,7 @@ INACTIVITY_CHECK_INTERVAL = 5  # seconds
 DOWNLOAD_WORKER_COUNT = 3
 
 # Game monitoring'
-GAME_MONITOR_POLL_INTERVAL = 300  # seconds between game state checks
+GAME_MONITOR_POLL_INTERVAL = 60  # seconds between game state checks
 GAME_MONITOR_RETRY_INTERVAL = 20  # seconds between retries when no game active
 
 # API metadata

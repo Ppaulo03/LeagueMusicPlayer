@@ -36,12 +36,7 @@ class GameStateManager:
         self._initialized = True
 
     def get_current_champion(self) -> Optional[Champion]:
-        """
-        Get the currently active champion in game.
 
-        Returns:
-            Champion object if in game, None otherwise
-        """
         try:
             champion = self.riot_client.get_current_champion()
 

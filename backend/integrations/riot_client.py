@@ -151,7 +151,6 @@ class RiotGameClient:
             BytesIO containing splash art image, or None if not available
         """
         if self.game_data.skin_splash:
-            # Reset stream position for reading
             self.game_data.skin_splash.seek(0)
             return self.game_data.skin_splash
 
