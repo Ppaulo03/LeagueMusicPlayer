@@ -36,7 +36,7 @@ void main() async {
     await windowManager.focus();
   });
   doWhenWindowReady(() {
-    appWindow.minSize = const Size(800, 600); // Força o limite no bitsdojo
+    appWindow.minSize = const Size(800, 600);
     appWindow.alignment = Alignment.center;
   });
   runApp(const AppBootstrap());
@@ -81,15 +81,22 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ConfigViewModel()),
-        ChangeNotifierProvider(
-          create: (context) =>
-              HomeViewModel(context.read<ConfigViewModel>())..init(),
+    return ChangeNotifierProvider(
+      create: (_) => ConfigViewModel()..fetchConfig(),
+      child: ChangeNotifierProvider(
+        create: (context) =>
+            HomeViewModel(context.read<ConfigViewModel>())..init(),
+
+        child: FluentApp(
+          title: 'League Music Player',
+          theme: FluentThemeData(
+            brightness: Brightness.dark,
+            accentColor: Colors.blue,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: const HomeScreen(),
         ),
-      ],
-      child: const HomeScreen(),
+      ),
     );
   }
 }
