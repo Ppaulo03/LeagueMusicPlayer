@@ -13,11 +13,9 @@ import random
 
 
 class TemaMusical(BaseModel):
-    estilo: str = Field(
-        description="Nome do estilo ou gênero musical. Ex: 'Heavy Metal', 'Lo-fi Samurai', 'Epic Orchestral'"
-    )
+    estilo: str
     descricao: str = Field(
-        description="Breve descrição de como esse estilo se encaixa no campeão"
+        description="Explicação muito breve (max 15 palavras) da conexão com o campeão."
     )
 
 
@@ -115,11 +113,11 @@ def gerar_playlist(campeao: str, total_alvo: int = 100):
             logger.info(f"Tema gerado: {t.estilo} - {t.descricao}")
         musicas_por_tema = total_alvo // len(temas)
 
-        # 2. Loop para preencher
         for tema in temas:
             queries = gerar_musicas_por_tema(campeao, tema, musicas_por_tema)
+            for q in queries:
+                logger.info(f"  -> {q}")
             playlist_final.extend(queries)
-            # Pequena pausa para não bater no rate limit se estiver usando conta free agressivamente
             time.sleep(1)
     except Exception as e:
         logger.error(f"Erro ao gerar playlist para {campeao}: {e}")

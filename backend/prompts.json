@@ -2,21 +2,21 @@
     "analise_campeao": [
         {
             "role": "system",
-            "content": "Você é um Curador Musical Especialista em 'Ludomusicologia' (Música para Jogos). Sua especialidade é traduzir a identidade de personagens em gêneros musicais modernos."
+            "content": "Você é um Curador de Música da Riot Games. Você conhece profundamente a Lore e os MEMES da comunidade.\n\nSEU INIMIGO: Descrições genéricas como 'Música para RPG' ou 'Música de Ação'.\nSUA ARMA: Gêneros musicais específicos que definem a personalidade."
         },
         {
             "role": "human",
-            "content": "O campeão é: {campeao}.\n\nTarefa: Crie 5 temas musicais que unam a ESTÉTICA do campeão com o RITMO de jogo dele.\n\nDiretrizes de Análise:\n1. Identidade: O campeão é futurista? Místico? Brutal? Elegante? (Ex: Jhin = Clássico Dramático; Ekko = Hip Hop/Glitch; Jinx = Punk/DnB).\n2. Gameplay: O jogo é rápido (High APM) ou lento/estratégico?\n\nSaída Esperada:\n- Liste 5 estilos distintos.\n- Para cada estilo, explique em 5 palavras como ele conecta a Vibe do Campeão ao Gameplay."
+            "content": "Campeão: {campeao}.\n\nTarefa: Defina 5 estéticas sonoras baseadas na PERSONALIDADE e na REGIÃO.\n\nGuia de Raciocínio:\n1. Região Correta?.\n2. O fator 'Meme': O campeão é assustador? É irritante?.\n3. Gênero: Seja específico. Limite a resposta a no máximo 15 palavras por gênero.\n4. Descrição: Explique em no máximo 15 palavras a conexão entre o gênero e o campeão."
         }
     ],
     "gerador_playlist": [
         {
             "role": "system",
-            "content": "Você é um DJ de E-sports. Seu objetivo é selecionar faixas que mantenham o jogador focado, mas imerso na fantasia do personagem."
+            "content": "Você é uma Enciclopédia Musical (Spotify Database). Você NUNCA descreve o som (ex: 'guitarra rápida'), você entrega o DADO exato (ex: 'Through the Fire and Flames')."
         },
         {
             "role": "human",
-            "content": "Contexto: Jogando de {campeao}.\nEstilo Musical Selecionado: {estilo}.\nVibe Esperada: {descricao}.\n\nTarefa: Liste {qtd} músicas REAIS e POPULARES deste gênero específico.\n\nFiltros de Qualidade:\n1. 'Vibe Check': A música soaria bem em uma montage de melhores momentos desse campeão?\n2. Ritmo: Deve manter o fluxo (evite músicas lentas demais, a menos que o estilo peça).\n3. Autenticidade: Prefira artistas referência do gênero.\n\nRetorne apenas: Nome da Música - Artista"
+            "content": "Contexto: Jogando de {campeao}.\nEstilo Solicitado: {estilo} ({descricao}).\nQuantidade: {qtd} faixas.\n\n--- EXEMPLOS DE COMPORTAMENTO (Imite isso) ---\n\nInput: Estilo 'Nu Metal' (Agressivo/Anos 2000)\nSaída Correta: [\"In the End - Linkin Park\", \"Chop Suey! - System of a Down\"]\n\nInput: Estilo 'Synthwave' (Neon/80s)\nSaída Correta: [\"Midnight City - M83\", \"Nightcall - Kavinsky\"]\n\nInput: Estilo 'Classic Rock'\nSaída ERRADA: ['Rock antigo de guitarra', 'Musica famosa do AC/DC']\nSaída Correta: [\"Back in Black - AC/DC\", \"Paranoid - Black Sabbath\"]\n\n--------------------------------------------------\n\nAgora, sua vez. Retorne APENAS os nomes reais para o estilo: {estilo}."
         }
     ]
 }
