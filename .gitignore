@@ -75,7 +75,7 @@ venv/
 .venv/
 env/
 .env/
-
+frontend/backend
 backend/build/
 backend/dist/
 backend/config.json
